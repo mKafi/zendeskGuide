@@ -1,0 +1,153 @@
+//
+// Components - Sections - Instant Helps
+// --------------------------------------------------
+.section-instant-helps {
+    margin-bottom: $instant-help-margin-bottom;
+    .heading-visitor {
+        margin: 0 0 32px 0;
+        padding: $space-0;
+    }
+    .instant-helps-list {
+        column-count: 4;
+        margin-left: -16px;
+    }
+    .instant-helps-list-item {        
+        border-radius: 8px;
+        background-color: #E4EBE4;
+        padding: 24px;
+        margin: 0 16px 32px 16px;
+        width: 95%;
+        vertical-align: top;
+
+        .icon-container {
+            a.img{
+                span{                    
+                    width: 145px;
+                    height: 145px; 
+                    background-size: 100%;                 
+                }                
+                display: block;                
+                margin-bottom: 24px;
+                text-align: center;
+            }
+        }
+        .text-container {
+            a {
+                h4{
+                    font-family: $instant-help-heading-font;
+                    font-weight: $instant-help-font-weight;
+                    font-size: $instant-help-heading-font-size;
+                    line-height: $instant-help-heading-line-height;
+                    color: $instant-help-heading-color;
+                    letter-spacing: $instant-help-heading-letter-space;
+                    margin-bottom: $instant-help-heading-margin-bottom;
+                }
+                p {
+                    font-weight: $instant-help-font-weight;
+                    font-family: $instant-help-heading-font;
+                    font-size: $instant-help-text-size;
+                    font-style: normal;
+                    line-height: $instant-help-text-line-height;
+                    letter-spacing: $instant-help-text-letter-space;
+                    color: $instant-help-text-color;
+                    margin-bottom: 0;
+                    max-height: 20px;
+                    overflow: hidden;
+                }
+                &:hover,
+                &:focus,
+                &:active {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        padding: $space-30 $space-0 $space-0;
+        .instant-helps-list {
+            column-count: 2;            
+        }
+        .instant-helps-list-item {
+            margin-bottom: $space-30;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: $space-30 $space-0 $space-0;
+        margin-bottom: 30px;
+        .instant-helps-list {
+            column-count: 1;
+            margin-left: $space-0;
+        }
+        .instant-helps-list-item {  
+            margin: 0 0 $space-20 0;
+            width: 100%;          
+            .icon-container {
+                display: inline-block;
+                height: $space-60;
+                vertical-align: middle;
+                a.img{
+                    display: inline-block;
+                    height: $space-60;
+                    vertical-align: middle;
+                    span{
+                        width: $space-60;
+                        height: $space-60;
+                    }
+                }
+            }
+
+            .text-container {
+                display: inline-block;
+                height: $space-60;
+                margin-left: $space-15;
+                text-align: left;
+                vertical-align: middle;
+                a{
+                    p{
+                        max-height: none;
+                        overflow: unset;
+                    }
+                }
+                h4 {
+                    margin-top: $space-0;
+                    padding: $space-0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 400px) {        
+        .instant-helps-list-item {
+            padding: 16px;
+            .icon-container{
+                display: block;
+                a.img{
+                    display: block;
+                    height: inherit;                    
+                    margin-bottom: 0;
+                    text-align: center;
+                    span{
+                        width: 45px;
+                        height: 45px;
+                    }
+                }
+            }
+            .text-container {
+                display: block;
+                overflow: hidden;
+                width: 100%;        
+                margin-left: 0;
+                height: inherit;
+                text-align: center;
+            }
+        }
+    }
+
+    @media (max-width: 280px) {
+        
+    }
+
+
+}

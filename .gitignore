@@ -1,0 +1,13 @@
+# Ignore the netbeans project config.
+/nbproject
+
+# Ignore the Node.js modules.
+node_modules
+
+# Ignore the Node.js logs.
+npm-debug.log
+yarn-error.log
+
+# Ignore the Guidekit compiled assets.
+/themes
+/compiled

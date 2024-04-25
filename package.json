@@ -1,0 +1,41 @@
+{
+	"name": "@upwork/guidekit",
+	"version": "1.0.0",
+	"description": "Upwork Help theme",
+	"main": "gulpfile.js",
+	"homepage": "https://stash.odesk.com/projects/help/repos/guidetheme/browse",
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@stash.odesk.com:7999/help/guidetheme.git"
+	},
+	"author": "Asif Iqbal <asifiqbal@cloud.upwork.com>",
+	"license": "UPWORK",
+	"scripts": {
+		"build:docs": "echo \"no docs specified\"",
+		"lint": "eslint lib/js/*",
+		"test:e2e": "echo \"no e2e tests specified\"",
+		"test:unit": "echo \"no e2e tests specified\"",
+		"build": "clear && gulp build --brand helpcenter --ver 1.0.1",
+		"watch": "clear && gulp watch --brand helpcenter --ver 1.0.1"
+	},
+	"devDependencies": {
+		"bootstrap-sass": "^3.4.3",
+		"eslint": "^8.10.0",
+		"font-awesome": "^4.7.0",
+		"gulp": "^4.0.2",
+		"gulp-clean": "^0.4.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-json-editor": "^2.5.6",
+		"gulp-modify-file": "^1.0.1",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^5.1.0",
+		"gulp-shell": "^0.8.0",
+		"gulp-uglify": "^3.0.2",
+		"gulp-uglifycss": "^1.1.0",
+		"gulp-zip": "^4.2.0",
+		"sass": "^1.49.9"
+	},
+	"dependencies": {
+		"yargs": "^17.7.2"
+	}
+}

@@ -1,0 +1,50 @@
+//
+// Forms - Request Form
+// --------------------------------------------------
+
+
+.request-form {
+    margin: $space-30 $space-0;
+
+    .form-field {
+        padding: $space-10 $space-0;
+
+        #request_anonymous_requester_email,
+        #request_subject,
+        #request_description {
+            width: 100%;
+            padding: $space-10 $space-20;
+        }
+
+        #request_description {
+            height: 200px;
+        }
+    }
+
+    footer {
+        input[type='submit'] {
+            font-size: $font-size-14;
+            line-height: $line-height-15;
+
+            padding: $button-padding-large;
+
+            transition: all 0.3s ease-in-out;
+
+            color: $white;
+            border: $border-none;
+            border-radius: $btn-border-radius-large;
+            background-color: $brand-primary;
+
+            &:hover,
+            &:focus,
+            &:active {
+                border: $border-none;
+                background-color: $brand-success;
+            }
+        }
+
+        p {
+            margin: $space-20 $space-0;
+        }
+    }
+}

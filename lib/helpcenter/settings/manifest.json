@@ -1,0 +1,62 @@
+{
+    "name": "HCTheme",
+    "author": "Asif Iqbal",
+    "version": "1.0.0",
+    "api_version": 1,
+    "default_locale": "en-us",
+    "settings": [
+        {
+            "label": "Branding",
+            "variables": [
+                {
+                    "type": "file",
+                    "identifier": "logo",
+                    "label": "Logo",
+                    "description": "upload logo here"
+                },
+                {
+                    "type": "file",
+                    "identifier": "favicon",
+                    "label": "Favicon",
+                    "description": "upload favicon here"
+                }
+            ]
+        },
+        {
+            "label": "SMF",
+            "variables": [
+                {
+                    "value": "",
+                    "type": "text",
+                    "label": "SMF Text",
+                    "identifier": "smf_text",
+                    "description": "Enter SMF text here"
+                },
+                {
+                    "type": "list",
+                    "label": "SMF Type",
+                    "value": "generic_smf",
+                    "identifier": "smf_type",
+                    "description": "Choose type of SMF",
+                    "options": [
+                        {
+                            "value": "generic_smf",
+                            "label": "Generic SMF"
+                        },
+                        {
+                            "value": "responnsive_smf",
+                            "label": "Responnsive SMF"
+                        }
+                    ]
+                },
+                {
+                    "value": "",
+                    "type": "text",
+                    "label": "SMF Text",
+                    "identifier": "responnsive_smf_tags",
+                    "description": "Enter Responnsive SMF tags"
+                }
+            ]
+        }
+    ]
+}

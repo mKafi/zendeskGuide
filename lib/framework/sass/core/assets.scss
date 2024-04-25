@@ -1,0 +1,300 @@
+//
+// Core - Assets
+// --------------------------------------------------
+footer .container{
+    max-width: $footer-desktop-width;
+}
+
+.avatar-user {
+    background-image: url($aws-base-path + '/avatar-user.svg');
+}
+
+.navbar-brand-logo {
+    background-image: url('//theme.zdassets.com/theme_assets/9131565/61b5d12191d42e781a67678c5a51d160c46ba62b.svg');
+}
+
+.arrow-dir-right{
+    background-image: url($aws-base-path + '/icon-arrow-link-right.svg');
+    height: $font-size-14;
+    width: $font-size-14;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
+    top: ($up-3 + $up-1)px;
+}
+
+[class^='icon-svg-'] {
+    display: inline-block;
+    width: $popular-topic-icon-size;
+    height: $popular-topic-icon-size;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.icon-svg-access-denied {
+    background-image: url($aws-base-path + '/icon-access-denied.svg');
+}
+
+.icon-svg-add-coworker {
+    background-image: url($aws-base-path + '/icon-add-coworker.svg');
+}
+
+.icon-svg-agency {
+    background-image: url($aws-base-path + '/icon-agency.svg');
+}
+
+.icon-svg-alien {
+    background-image: url($aws-base-path + '/icon-alien.svg');
+}
+
+.icon-svg-api {
+    background-image: url($aws-base-path + '/icon-api.svg');
+}
+
+.icon-svg-apps {
+    background-image: url($aws-base-path + '/icon-apps.svg');
+}
+
+.icon-svg-badge {
+    background-image: url($aws-base-path + '/icon-badge.svg');
+}
+
+.icon-svg-billing {
+    background-image: url($aws-base-path + '/icon-billing.svg');
+}
+
+.icon-svg-case {
+    background-image: url($aws-base-path + '/icon-case.svg');
+}
+
+.icon-svg-other-depts {
+    background-image: url($aws-base-path + '/icon-other-depts.svg');
+}
+
+.icon-svg-catalog {
+    background-image: url($aws-base-path + '/icon-catalog.svg');
+}
+
+.icon-svg-certificate {
+    background-image: url($aws-base-path + '/icon-certificate.svg');
+}
+
+.icon-svg-earning-certificate {
+    background-image: url($aws-base-path + '/icon-earning-certificate.svg');
+}
+
+.icon-svg-client {
+    background-image: url($aws-base-path + '/icon-client.svg');
+}
+
+.icon-svg-close {
+    background-image: url($aws-base-path + '/icon-close.svg');
+}
+
+.icon-svg-close-account {
+    background-image: url($aws-base-path + '/icon-close-account.svg');
+}
+
+.icon-svg-contract {
+    background-image: url($aws-base-path + '/icon-contract.svg');
+}
+
+.icon-svg-directory {
+    background-image: url($aws-base-path + '/icon-directory.svg');
+}
+
+.icon-svg-documents {
+    background-image: url($aws-base-path + '/icon-documents.svg');
+}
+
+.icon-svg-enterprise-account {
+    background-image: url($aws-base-path + '/icon-enterprise-account.svg');
+}
+
+.icon-svg-enterprise-services {
+    background-image: url($aws-base-path + '/icon-enterprise-services.svg');
+}
+
+.icon-svg-find-freelancer{
+    background-image: url($aws-base-path + '/icon-find-freelancer.svg');
+}
+
+.icon-svg-freelancer {
+    background-image: url($aws-base-path + '/icon-freelancer.svg');
+}
+
+.icon-svg-get-paid {
+    background-image: url($aws-base-path + '/icon-get-paid.svg');
+}
+
+.icon-svg-enterprise-billing {
+    background-image: url($aws-base-path + '/icon-enterprise-billing.svg');
+}
+
+.icon-svg-get-started {
+    background-image: url($aws-base-path + '/icon-get-started.svg');
+}
+
+.icon-svg-hire {
+    background-image: url($aws-base-path + '/icon-hire.svg');
+}
+
+.icon-svg-identity-card {
+    background-image: url($aws-base-path + '/icon-identity-card.svg');
+}
+
+.icon-svg-my-stats {
+    background-image: url($aws-base-path + '/icon-my-stats.svg');
+}
+
+.icon-svg-lock {
+    background-image: url($aws-base-path + '/icon-lock.svg');
+}
+
+.icon-svg-reset-password {
+    background-image: url($aws-base-path + '/icon-reset-password.svg');
+}
+
+.icon-svg-not-found {
+    background-image: url($aws-base-path + '/icon-not-found.svg');
+}
+
+.icon-svg-payments {
+    background-image: url($aws-base-path + '/icon-payments.svg');
+}
+
+.icon-svg-payment-issues {
+    background-image: url($aws-base-path + '/icon-payment-issues.svg');
+}
+
+.icon-svg-policies {
+    background-image: url($aws-base-path + '/icon-policies.svg');
+}
+
+.icon-svg-private-profile {
+    background-image: url($aws-base-path + '/icon-private-profile.svg');    
+}
+
+.icon-svg-profile-reset {
+    background-image: url($aws-base-path + '/icon-profile-reset.svg');    
+}
+
+.icon-svg-problem-tickets {
+    background-image: url($aws-base-path + '/icon-problem-tickets.svg');
+}
+
+.icon-svg-profile {
+    background-image: url($aws-base-path + '/icon-profile.svg');
+}
+
+.icon-svg-projects {
+    background-image: url($aws-base-path + '/icon-projects.svg');
+}
+
+.icon-svg-find-projects {
+    background-image: url($aws-base-path + '/icon-find-project.svg');
+}
+
+.icon-svg-secured-payment {
+    background-image: url($aws-base-path + '/icon-secured-payment.svg');
+}
+
+.icon-svg-search-jobs {
+    background-image: url($aws-base-path + '/icon-search-jobs.svg');
+}
+
+.icon-svg-service {
+    background-image: url($aws-base-path + '/icon-service.svg');
+}
+
+.icon-svg-start-working {
+    background-image: url($aws-base-path + '/icon-start-working.svg');
+}
+
+.icon-svg-make-hire {
+    background-image: url($aws-base-path + '/icon-make-hire.svg');
+}
+
+.icon-svg-technical-support {
+    background-image: url($aws-base-path + '/icon-technical-support.svg');
+}
+
+.icon-svg-trust-safety {
+    background-image: url($aws-base-path + '/icon-trust-safety.svg');
+    background-size: auto 100%;
+}
+
+.icon-svg-zendesk {
+    background-image: url($aws-base-path + '/icon-zendesk.svg');
+}
+
+.icon-svg-zopim {
+    background-image: url($aws-base-path + '/icon-zopim.svg');
+}
+
+.icon-svg-account{
+    background-image: url($aws-base-path + '/icon-account.svg');
+}
+
+
+/* Alert icons. */
+.alert-info {
+    .alert-icon {
+        background-image: url($aws-base-path + '/icon-info.svg');
+    }
+}
+
+.alert-success {
+    .alert-icon {
+        background-image: url($aws-base-path + '/icon-success.svg');
+    }
+}
+
+.alert-warning {
+    .alert-icon {
+        background-image: url($aws-base-path + '/icon-warning.svg');
+    }
+}
+
+.alert-danger {
+    .alert-icon {
+        background-image: url($aws-base-path + '/icon-danger.svg');
+    }
+}
+
+
+/* CSAT icons. */
+.csat-icon-angry {
+    background-image: url($aws-base-path + '/csat/angry.svg');
+}
+
+.csat-icon-sad {
+    background-image: url($aws-base-path + '/csat/sad.svg');
+}
+
+.csat-icon-indifferent {
+    background-image: url($aws-base-path + '/csat/indifferent.svg');
+}
+
+.csat-icon-happy {
+    background-image: url($aws-base-path + '/csat/indifferent.svg');
+}
+
+.csat-icon-heart-eyes {
+    background-image: url($aws-base-path + '/csat/heart-eyes.svg');
+}
+
+
+/* Pagination icons. */
+.pagination {
+    .pagination-prev {
+        .pagination-icon {
+            background-image: url($aws-base-path + '/arrows/icon-arrow-left.svg');
+        }
+    }
+    .pagination-next {
+        .pagination-icon {
+            background-image: url($aws-base-path + '/arrows/icon-arrow-right.svg');
+        }
+    }
+}

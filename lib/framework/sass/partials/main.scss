@@ -1,0 +1,101 @@
+//
+// Partials - Main
+// --------------------------------------------------
+main {
+    position: relative;
+    top: -1px;
+    min-height: 520px;
+    > .container{
+        max-width: $container-large-desktop-max-width;
+        padding-left: $space-0;
+        padding-right: $space-0;        
+        .row{
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+.main {
+    background-color: $white;
+}
+.breadcrumbs-mobile {
+    display: none;
+}
+.inner-container {
+    width: 75%;
+    margin: $space-0 auto;
+    @media (max-width: 991px) {
+        width: 100%;
+        margin: $space-0 auto;
+    }
+}
+
+@media (max-width: 1440px){
+    .container { 
+        margin-left: 80px;
+        margin-right: 80px;  
+    }
+}
+@media (max-width: 1199px){
+    .breadcrumbs-mobile {
+        display: none;
+    }
+    .breadcrumbs-desktop {
+        display: block;
+    }
+    .container {   
+        margin-left: 32px;
+        margin-right: 32px;   
+        .left-side-container{
+            width: 66.66666667%;
+            display: inline-block;
+        }
+        .right-side-container{
+            width: 33.3333332%;
+            display: inline-block;
+        }
+    }
+}
+/* Inherited rules from other stylesheet overriding A */  
+@media (min-width: 992px){
+    .container {
+        width: unset;
+    }
+}
+@media (min-width: 768px){
+    .container {
+        width: unset;
+    }
+}
+/* Inherited rules from other stylesheet overriding Z */
+
+@media (max-width: 700px){    
+    .container {
+        margin-left: 24px;
+        margin-right: 24px;          
+        .article-cont{
+            .article-body{
+                width: $left-content-small-devices-max-width;
+            }
+            .article-sidebar{
+                display: none;
+            }
+        }
+    }
+
+    .breadcrumbs-desktop {
+        display: none;
+    }
+    .breadcrumbs-mobile {
+        display: block;
+        .breadcrumbs{
+            display: block;
+        }
+    }
+    .right-side-container{
+        display: none;
+    }
+
+
+
+}

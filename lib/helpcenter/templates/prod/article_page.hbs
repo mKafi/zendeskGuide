@@ -1,0 +1,167 @@
+<!-- highlight.js Styles. -->
+<link href="{{asset 'highlight.css'}}" rel="stylesheet" media="all"/>
+
+<!-- magnific popup Styles. -->
+<link href="{{asset 'magnific.css'}}" rel="stylesheet" media="all"/>
+
+<!-- Font Awesome Styles. -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+<div class="container">
+    <div class="article-page">
+        <div class="row">
+            <div class="breadcrumbs-mobile">                
+                {{breadcrumbs}}                
+            </div>
+
+            <div class="breadcrumbs-desktop">
+                {{breadcrumbs}}                
+            </div>            
+
+            <!-- Generic SMF -->
+            <div id="section-smf" class="section-smf article-page-smf">
+                <div class="container">
+                    <div class="row"></div>
+                </div>
+            </div>
+            
+            <!-- Article body content -->
+            <div class="article-cont">
+                <div class="col-xs-12 col-sm-7 col-md-8">
+                    <div class="main-page-title">{{article.title}}</div>
+                    <div class="article-body">{{article.body}}</div>                    
+                </div>                
+
+                <!--  right sidebar elements -->
+                <div class="col-xs-12 col-sm-5 col-md-4">
+                    <div id="article-sidebar" class="article-sidebar">
+                        <section class="help-content-widget">
+                            <h3>In this article</h3>
+                            <ul class="nav nav-tabs nav-stacked-right">
+                            </ul>
+                        </section>
+                        
+                        <section class="section-articles-widget" data-section="{{ section.id }}">
+                            <h3>Articles in this section</h3>
+                            <ul class="nav nav-tabs nav-stacked-right">
+                                {{#each section.articles}}
+                                    <li style="{{#is id ../article.id}}display:none;{{/is}}">
+                                        <a href="{{url}}">{{title}}</a>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </section>
+                        {{recent_articles}}
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- highlight.js Script. -->
+<script src="{{asset 'highlight.js'}}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- magnific popup Script. -->
+<script src="{{asset 'magnific.js'}}"></script>
+<script type="text/javascript" async>
+jQuery(function () {
+    let articleID = {{ article.id }}
+    window.isEntArticle = false
+
+{{#each (filter article.labels on="identifier" equals="filter-hc-enterprise")}}
+    window.isEntArticle = true
+{{/each}}
+
+if (window.isEntArticle == true) {
+    if (getCookie(upworkConfig.cookies.prefix + 'user-enterprise-org') == null) {
+        if (! isUserInternal()) {
+            window.location.href = zdBrands.main.hc.url
+        } else {
+            $('.box-container').after(enterpriseContactSection())
+        }
+    } else {
+        $('.box-container').after(enterpriseContactSection())
+    }
+} else {
+    if (getCookie(upworkConfig.cookies.prefix + 'freelancer-chat-route') != 'LI_Freelancer_Support_CX410') {
+        if (getCookie(upworkConfig.cookies.prefix + 'user-enterprise-org') == null) {
+            if (isDebugging()) {
+                $('.box-container').after(nonEnterpriseContactSection())
+            }
+        }
+    }
+}
+
+    /* Redirect users, if article redirect is acitve. */
+    for (i in kbRedirects.articles) {
+        if (articleID == kbRedirects.articles[i].source) {
+            if (kbRedirects.articles[i].destination == '') {
+                window.location.href = zdBrands.main.hc.url
+            } else {
+                let path = kbRedirects.articles[i].destination.split('/')
+                if (path.length > 1) {
+                    window.location.href = zdBrands.main.hc.url + '/' + kbRedirects.articles[i].destination
+                } else {
+                    window.location.href = zdBrands.main.hc.url + '/articles/' + kbRedirects.articles[i].destination
+                }
+            }
+        }
+    }
+
+    /* Show article spefic SMF. */
+    for (i in smfMatrics) {
+        if (isUserTagExists(smfMatrics[i].tags)) {
+            for (j in smfMatrics[i].matrics) {
+                if (smfMatrics[i].matrics[j].articles.indexOf(articleID) !== -1) {
+                    $('#section-smf .row').append(addSMF(smfMatrics[i].identifier, smfMatrics[i].matrics[j].smf, 'success'))
+                }
+            }
+        }
+    }
+
+    $('.image-with-lightbox').magnificPopup({
+        'type': 'image',
+        'zoom': {
+            'enabled': true,
+            'duration': 300,
+            'easing': 'ease-in-out'
+        }
+    })
+
+    $('.gallery-with-lightbox').each(function (index, element) {
+        $(this).magnificPopup({
+            'delegate': 'a',
+            'type': 'image',
+            'gallery': {
+                'enabled': true
+            },
+            'zoom': {
+                'enabled': true,
+                'duration': 300,
+                'easing': 'ease-in-out'
+            }
+        })
+    })
+
+    /* Get mirrored articles for articles in this section bar. */
+    let sectionID = $('.section-articles-widget').attr('data-section')
+    if (sectionID) {
+        for (i in kbMirrors.sections) {
+            if (sectionID == kbMirrors.sections[i].mirror) {
+                let output = []
+                for (j in kbMirrors.sections[i].items) {
+                    output.push('<li>')
+                    output.push('<a href="/hc/en-us/articles/' + kbMirrors.sections[i].items[j].id + '">' + kbMirrors.sections[i].items[j].title + '</a>')
+                    output.push('</li>')
+                }
+                $('.section-articles-widget .nav-stacked-right').append(output.join(''))
+            }
+        }
+    }
+})
+</script>

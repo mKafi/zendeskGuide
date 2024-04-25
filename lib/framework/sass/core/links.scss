@@ -1,0 +1,16 @@
+//
+// Core - Links
+// --------------------------------------------------
+
+
+a {
+    font-weight: $font-weight-bold;
+
+    color: $brand-primary;
+    outline: none;
+
+    &:hover {
+        color: $brand-success;
+        outline: none;
+    }
+}

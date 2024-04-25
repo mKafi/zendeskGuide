@@ -1,0 +1,19 @@
+//
+// Components - Side Convo
+// --------------------------------------------------
+
+
+.side-conversation-subject,
+.side-conversation-created,
+.side-conversation-updated,
+.side-conversation-participant-list {
+    display: none;
+}
+
+.convo-tab-pane {
+    .comment-textarea {
+        textarea {
+            border: $border-flannel-gray-small;
+        }
+    }
+}

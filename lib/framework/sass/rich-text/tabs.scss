@@ -1,0 +1,21 @@
+//
+// Rich Text - Tabs
+// --------------------------------------------------
+
+
+.article-body {
+    .nav {
+        &.nav-tabs {
+            margin-left: $space-0;
+            padding: $space-0;
+
+            > li {
+                margin-bottom: $space-0;
+            }
+        }
+    }
+
+    .tab-content {
+        margin-bottom: $space-25;
+    }
+}

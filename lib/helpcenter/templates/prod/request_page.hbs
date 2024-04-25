@@ -1,0 +1,196 @@
+
+
+<div class="container">
+    <div class="request-page">    
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcrumb breadcrumbs-mobile">                    
+                    {{breadcrumbs}}
+                </div>
+            </div>
+        </div>    
+    </div>
+
+    <header class="page-header request-page">    
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="heading-visitor">{{request.subject}}</h2>
+                <p class="request-id">{{t 'request' request_number=request.id}}</p>
+            </div>
+        </div>    
+    </header>
+
+    <!-- Generic SMF -->
+    <div id="section-smf" class="section-smf request-page">    
+        <div class="row"></div>
+    </div>
+
+    <div id="ajax-loader-overlay" class="ajax-loader-overlay">
+        <div class="ajax-loader"></div>
+    </div>
+
+    <div class="request-page">
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div id="comments-container" class="comments-container">
+                    {{#each comments}}
+                        <div class="comments">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="comment-author">
+                                        <div class="avatar-user"></div>
+                                        <div class="comment-meta">
+                                            <div class="comment-author-name" data-internal="{{author.agent}}" data-id="{{author.id}}">
+                                                {{author.name}}
+                                            </div>
+                                            <div class="comment-date">
+                                                <small>{{date created_at}}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <section class="comment-body">{{body}}</section>
+                                    {{#if attachments}}
+                                        <ul class="list-unstyled attachment-list">
+                                            {{#each attachments}}
+                                                <li>
+                                                    <a href="{{url}}" target="_blank">
+                                                        <span class="air-icon-attach"></span>
+                                                        {{name}}
+                                                    </a>
+                                                    <div class="meta">
+                                                        <small>({{size}})</small>
+                                                    </div>
+                                                </li>
+                                            {{/each}}
+                                        </ul>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                    <div class="row text-right">
+                        {{pagination}}
+                    </div>
+                    {{#form 'comment' class='comment-form'}}
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="comment-author">
+                                    <div class="avatar-user"></div>
+                                </div>
+                                <div class="comment-container">
+                                    <div class="comment-textarea">{{wysiwyg 'body'}}</div>
+                                    {{#if upload}}
+                                        <div class="comment-attachments">
+                                            {{upload}}
+                                        </div>
+                                    {{/if}}
+                                    <div class="comment-form-controls">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                {{input class='btn btn-primary' type='submit'}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/form}}
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <div id="request-sidebar" class="request-sidebar">
+                    <h3>
+                        More info
+                        <span class="air-icon-arrow-expand"></span>
+                    </h3>
+
+                    {{#if request.followup_source_id}}
+                        <dl id="request-details-followup" class="request-details">
+                            <dt>{{t 'followup'}}</dt>
+                            <dd>{{link 'request' id=request.followup_source_id}}</dd>
+                        </dl>
+
+                        <hr>
+
+                    {{/if}}
+
+                    <dl id="request-details-id" class="request-details">
+                        <dt>{{t 'id'}}</dt>
+                        <dd>#{{request.id}}</dd>
+                    </dl>
+
+                    <dl id="request-details-status" class="request-details">
+                        <dt>{{t 'status'}}</dt>
+                        <dd>
+                            <span class="request-status label request-status-{{request.status}}" title="{{request.status_description}}">
+                                {{request.status_name}}
+                            </span>
+                        </dd>
+                    </dl>
+
+                    <dl id="request-details-created" class="request-details">
+                        <dt>{{t 'created'}}</dt>
+                        <dd>{{date request.created_at}}</dd>
+                    </dl>
+
+                    <dl id="request-details-updated" class="request-details">
+                        <dt>{{t 'last_activity'}}</dt>
+                        <dd>{{date request.updated_at}}</dd>
+                    </dl>
+
+                    <dl id="request-details-requester" class="request-details">
+                        <dt>{{t 'requester'}}</dt>
+                        <dd>{{request.requester.name}}</dd>
+                    </dl>
+
+                    <dl id="request-details-collaborators" class="request-details">
+                        {{#if collaborators}}
+                            <dt>{{t 'ccs'}}</dt>
+                            <dd>
+                                <ul class="request-collaborators">
+                                    {{#each collaborators}}
+                                        <li title={{name}}>{{name}}</li>
+                                    {{/each}}
+                                </ul>
+                            </dd>
+                        {{/if}}
+                    </dl>
+
+                    <dl id="request-details-assignee" class="request-details" style="display:none">
+                        <dt>{{t 'assignee'}}</dt>
+                        <dd>{{assignee.name}}</dd>
+                    </dl>
+
+                </div>
+
+                {{#if attachments}}
+                    <div id="request-attachments-sidebar" class="request-attachments-sidebar">
+                        <h3>{{t 'attachments_heading'}}</h3>
+                        <ul class="request-attachments">
+                            {{#each attachments}}
+                                <li class="attachment-item">
+                                    <a href="{{url}}" target="_blank">
+                                        <span class="air-icon-download"></span>
+                                        {{name}}
+                                    </a>
+                                    <div class="attachment-meta">
+                                        <span class="attachment-meta-item meta-data">
+                                            <small>
+                                                {{size}}
+                                            </small>
+                                        </span>
+                                    </div>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                {{/if}}
+
+            </div>
+        </div>
+    </div>
+</div>

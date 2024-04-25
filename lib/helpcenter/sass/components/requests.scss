@@ -1,0 +1,40 @@
+//
+// Components - Requests
+// --------------------------------------------------
+
+
+.request-status {
+    font-size: $font-size-10;
+    line-height: $font-size-10;
+
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    text-transform: uppercase;
+
+    border-radius: 10px;
+
+    &.request-status-open {
+        color: $brand-success;
+        border: $border-success-small;
+        background-color: $white;
+    }
+
+    &.request-status-answered {
+        display: inline-block;
+        overflow: hidden;
+
+        width: 67px;
+
+        white-space: nowrap;
+
+        color: $white;
+        background: $brand-warning;
+    }
+
+    &.request-status-solved {
+        color: $white;
+        background-color: $color-smoke-gray;
+    }
+}

@@ -1,0 +1,184 @@
+//
+// Forms - Input Fields
+// --------------------------------------------------
+
+
+.form-group {
+    p {
+        margin-top: $space-10;
+    }
+}
+
+textarea,
+input[type='text'],
+input[type='search'] {
+    font-size: $font-size-14;
+
+    padding: $input-padding;
+
+    transition: all 0.3s ease-in-out;
+    letter-spacing: $letter-spacing-base;
+
+    color: $text-color;
+    border: $border-flannel-gray-small;
+    border-radius: $border-radius-sm;
+    background-color: $white;
+
+    @include input-placeholder();
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: $border-success-small;
+        outline: none;
+    }
+}
+
+textarea {
+    width: 100%;
+
+    resize: none;
+
+    &.form-control {
+        height: 100px;
+    }
+}
+
+.form-control {
+    padding: $input-padding;
+
+    border-radius: $input-border-radius;
+    box-shadow: $drop-shadow-none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        box-shadow: $drop-shadow-none;
+    }
+}
+
+label {
+    font-size: $font-size-14;
+    font-weight: $font-weight-bold;
+
+    display: block;
+
+    margin: $space-20 $space-0 $space-10;
+
+    color: $text-color;
+}
+
+.form-field {
+    &.required {
+        label {
+            &::after {
+                font-size: $font-size-12;
+                line-height: $line-height-17;
+
+                padding-left: $space-5;
+
+                content: '*';
+
+                color: $brand-danger;
+            }
+        }
+    }
+
+    p {
+        font-size: $font-size-12;
+        font-style: italic;
+
+        color: $color-granite-gray;
+    }
+}
+
+.input-group {
+    .input-group-addon {
+        padding: $space-10;
+
+        color: $white;
+        border: $border-primary-small;
+        background-color: $brand-primary;
+    }
+
+    &.input-group-sm {
+        .form-control {
+            height: auto;
+            padding: $input-padding-small;
+        }
+
+        .input-group-addon {
+            width: 36px;
+            height: 30px;
+            padding: $space-0;
+
+            cursor: pointer;
+        }
+    }
+}
+
+.upload-dropzone {
+    width: $space-300;
+    margin: $space-20 $space-0 $space-0;
+    padding: $button-padding-small;
+
+    transition: all 0.3s ease-in-out;
+
+    border: $border-flannel-gray-small;
+    border-radius: $border-radius-large;
+    background-color: $white;
+
+    span {
+        font-size: $font-size-14;
+        line-height: $line-height-20;
+
+        padding: $space-0;
+
+        color: $brand-primary;
+
+        &::before {
+            font-family: 'Air icons';
+            font-size: $font-size-14;
+
+            content: '\e915';
+
+            color: $brand-primary;
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $brand-success;
+        background-color: $color-cloud-gray;
+
+        &::before {
+            color: $brand-success;
+        }
+    }
+}
+
+.request_custom_fields_address_street,
+.request_custom_fields_address_city,
+.request_custom_fields_address_state,
+.request_custom_fields_address_zip {
+    display: inline-block;
+
+    margin-right: $space-5;
+}
+
+.request_custom_fields_address_street {
+    width: 43% !important;
+}
+
+.request_custom_fields_address_city {
+    width: 20% !important;
+}
+
+.request_custom_fields_address_state {
+    width: 20% !important;
+}
+
+.request_custom_fields_address_zip {
+    width: 15% !important;
+}

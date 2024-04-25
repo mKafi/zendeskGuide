@@ -1,0 +1,100 @@
+//
+// Rich Text - Lists
+// --------------------------------------------------
+
+
+.article-body {
+    ul,
+    ol {
+        margin-top: $space-25;
+        margin-bottom: $space-25;
+        margin-left: 2em;
+        padding: $space-0 $space-15;
+
+        li {
+            margin-bottom: $space-15;
+        }
+
+        &.list-with-heading {
+            margin-top: $space-0;
+        }
+    }
+
+    ul {
+        &.list-bullet {
+            padding: $space-0;
+
+            list-style-type: none;
+
+            li {
+                &::before {
+                    font-family: 'Air icons';
+
+                    margin-right: $space-10;
+
+                    content: '\e92e';
+
+                    color: $brand-primary;
+                }
+            }
+        }
+    }
+
+    ol {
+        &.list-colored {
+            padding: $space-0;
+
+            list-style: none;
+
+            counter-reset: li;
+
+            li {
+                position: relative ;
+
+                padding-left: $space-30;
+
+                counter-increment: li;
+
+                &::before {
+                    line-height: $space-20;
+
+                    position: absolute;
+                    left: $space-0;
+
+                    display: inline-block;
+
+                    width: $space-20;
+                    height: $space-20;
+
+                    content: counter(li);
+                    text-align: center;
+
+                    color: $white;
+                    border-radius: 50%;
+                    background-color: $brand-primary;
+                }
+            }
+        }
+    }
+
+    dl {
+        margin: $space-0 $space-0 $space-25;
+
+        dt,
+        dd {
+            margin: $space-0 $space-0 $space-15;
+        }
+
+        &.dl-horizontal {
+            dt {
+                font-size: $font-size-14;
+
+                text-align: left;
+            }
+
+            dd {
+                margin-left: 160px;
+            }
+        }
+    }
+}

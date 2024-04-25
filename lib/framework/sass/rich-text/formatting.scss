@@ -1,0 +1,39 @@
+//
+// Rich Text - Quotes
+// --------------------------------------------------
+
+
+.article-body {
+    blockquote {
+        font-style: italic;
+
+        margin: $space-0 $space-0 $space-30;
+
+        border-color: $color-granite-gray;
+        background-color: $color-background-gray;
+
+        &.is-colored {
+            border-color: $brand-primary;
+        }
+    }
+
+    pre {
+        overflow: auto;
+
+        margin: $space-0 $space-0 $space-30;
+        padding: $space-20;
+
+        white-space: pre;
+
+        border: $border-flannel-gray-small;
+        border-radius: $border-radius-sm;
+        background-color: $color-background-gray;
+
+        code {
+            margin-top: $space-20 * -1;
+            padding: $space-0;
+
+            background: transparent;
+        }
+    }
+}

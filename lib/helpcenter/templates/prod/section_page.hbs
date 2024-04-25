@@ -1,0 +1,191 @@
+<div class="container">
+    <div class="row">
+        <div class="section-page">
+            <div class="breadcrumb breadcrumbs-mobile">                
+                {{breadcrumbs}}
+            </div>
+
+            <div class="breadcrumb breadcrumbs-desktop">
+                {{breadcrumbs}}
+                <div class="main-page-title">{{section.name}}</div>
+            </div>
+
+            <!-- Generic SMF -->
+            <div id="section-smf" class="section-smf section-page-smf">
+                <div class="container">
+                    <div class="row"></div>
+                </div>
+            </div>
+
+            <div class="body-content-wrapper row">
+                <!-- Left side content area A -->
+                <div class="left-side-container col-xs-12 col-sm-7 col-md-8">                    
+                    <div class="category-block">
+                        <div class="category-title">
+                            <h3>Articles in this section</h3>
+                        </div>
+                    
+                        {{#if section.articles}}
+                            <div class="row">
+                                <div class="article-list section-page">
+                                    {{#each section.articles}}
+                                        <div class="col-xs-12">
+                                            <div class="article-list-item">
+                                                <div class="title">{{title}}</div>
+                                                <p class="excerpt">{{excerpt body characters=180}}</p>
+                                                <a href="{{url}}">Continue reading</a>
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{else}}
+                            <div class="row">
+                                <div class="col-xs-12"><h4 class="section-empty">{{t 'empty'}}</h4></div>
+                            </div>
+                        {{/if}}
+                    </div>                    
+                </div>
+                <!-- Left side content area Z -->
+
+                <!-- right sidebar A --> 
+                <div class="right-side-container col-xs-12 col-sm-5 col-md-4">                    
+                    <div class="right-side-widget-cont"></div>                    
+                </div>
+                <!-- right sidebar Z --> 
+            </div>
+
+            {{#unless signed_in}}
+                <section id="contact-ask" class="section section-contact-ask">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <section class="section profile-ad">
+                                <div class="profile-container">                
+                                    <span>Log in for personalized service and assistance.</span>
+                                    <h3>Contact Us</h3>
+                                    <a href="https://support.upwork.com/hc/en-us/signin?return_to=https://support.upwork.com/hc/en-us" class="banner-button">Log In</a>
+                                    <img id="img-cta-contact" src="" alt=""/>                
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="col-md-6">
+                            <section class="section profile-ad">
+                                <div class="profile-container"> 
+                                    <span>The Upwork Community team is here to help.</span>               
+                                    <h3>Ask Everyone</h3>
+                                    <a href="https://community.upwork.com" class="banner-button">Ask</a>
+                                    <img id="img-cta-ask" src="" alt=""/>                
+                                </div>
+                            </section> 
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section profile-ad">
+                    <div class="profile-container">                
+                        <h3>Log in to get personalized help.</h3>
+                        <a href="#" class="banner-button link-log-in">Log In</a>
+                        <a class="btn btn-link" href="https://www.upwork.com/ab/account-security/reset-password">Forgot my password</a>
+                        <img id="img-cta-personalized help" src="" alt=""/>                
+                    </div>
+                </section>
+            {{/unless}}            
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" async>
+    jQuery(function () {
+        var sectionID = {{section.id}}
+        for (i in kbRedirects.sections) {
+            if (sectionID == kbRedirects.sections[i].source) {
+                if (kbRedirects.sections[i].destination == '') {
+                    window.location.href = zdBrands.main.hc.url
+                } else {
+                    let path = kbRedirects.sections[i].destination.split('/')
+                    if (path.length > 1) {
+                        window.location.href = zdBrands.main.hc.url + '/' + kbRedirects.sections[i].destination
+                    } else {
+                        window.location.href = zdBrands.main.hc.url + '/sections/' + kbRedirects.sections[i].destination
+                    }
+                }
+            }
+        }
+        for (i in kbMirrors.sections) {
+            if (sectionID == kbMirrors.sections[i].mirror) {
+                for (j in kbMirrors.sections[i].items) {
+                    if ($('.section-tree .section-empty').length > 0) {
+                        var output = []
+                        output.push('<div class="row">')
+                            output.push('<div class="article-list">')
+                            output.push('</div>')
+                        output.push('</div>')
+                        $('.section-tree .section-empty').parents().eq(1).replaceWith(output.join(''))
+                    }
+                    getMirroredArticles(kbMirrors.sections[i].items[j].id)
+                }
+            }
+        }
+    })   
+
+    $(document).ready(function(){
+        function getSelfCategorySections(){         
+            let sectionData = []
+            let params = {}
+            $.ajax(zdBrands.main.api + '/help_center/en-us/sections/'+sectionID, { 
+                type: 'GET',
+                dataType: 'json',            
+                crossDomain: true,
+                success: function (data) {
+                    if(data.section.category_id){
+                        $.ajax(zdBrands.main.api + '/help_center/en-us/categories/'+data.section.category_id+'/sections', {                     
+                            type: 'GET',
+                            dataType: 'json',
+                            crossDomain: true,
+                            success: function (sectionRes) {
+                                for(i in sectionRes.sections){
+                                    let activeClass = ''
+                                    if(sectionID == sectionRes.sections[i].id){
+                                        activeClass = ' active'
+                                    }
+                                    sectionData.push({
+                                        'link': zdBrands.main.hc.url+'/sections/'+sectionRes.sections[i].id,
+                                        'label': sectionRes.sections[i].name,
+                                        'class': 'right-side-widget-link'+activeClass,
+                                        'id':'sidebar-section-link-'+sectionRes.sections[i].id,
+                                    })
+
+                                }
+                                params = {
+                                    'title':'',
+                                    'parent':'.right-side-widget-cont',
+                                    'weight':'0',
+                                    'data': sectionData
+                                } 
+                                /* Calling generic function for rightsidebar generation */ 
+                                generateRightSideWeidget(params)
+                            }
+                        })
+                    }
+                }
+            })        
+        } 
+        
+        /* Generating section page sidebar */
+        getSelfCategorySections();
+
+        /* Setting fixed or relative position on generated rightsidebar on page scrolling */ 
+        $(document).scroll(function(){
+            let params = {
+                'parent':'.right-side-container',        
+                'afterElement':'.navbar.navbar-default',
+                'element':'.right-side-widget-cont',
+                'adjustTop': 0,
+                'leftContainer':'.left-side-container',
+                'adjustBottom' : -80 
+            }            
+            fixRightSideBar(params)
+        });
+    });
+</script>

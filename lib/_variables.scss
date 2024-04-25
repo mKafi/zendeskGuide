@@ -1,0 +1,770 @@
+// Core variables and mixins
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+
+//** AWS base path.
+/* $aws-base-path: 'https://assets.static-upwork.com/helpcenter/air2.75'; */
+//$aws-base-path: 'http://air30assets.lcl/air3.0'; /* NEED TO REMOVE THIS LINE AT PRODUCTION */
+$aws-base-path: 'https://assets.static-upwork.com/helpcenter/air3.0';
+
+//== Colors.
+$black: #000000;
+$white: #FFFFFF;
+$red: red;
+$gray-01: #5E6D55;
+$gray-01-inverse: #ffffff;
+$gray-03:#BECCBE;
+$gray-04: #D5E0D5;
+$up-black : #001E00;
+$up-black-inverse: #ffffff;
+$up-light-green: #108A00;
+$gray-05: #E4EBE4;
+$gray-05-inverse: #222222;
+$gray-06 : #F2F7F2;
+$gray-06-inverse: #222222;
+$gray-07: #F7FAF7;
+
+//== Green.
+$color-up-green-lightest: #88C872;
+$color-up-green-light: #66B549;
+$color-up-green: #14A800;
+$color-up-green-dark: #3C8224;
+$color-up-green-darkest: #2D6318;
+$color-up-lime-lightest: #DBF0A3;
+$color-up-lime-light: #C0E666;
+$color-up-lime: #95DF00;
+$color-up-lime-dark: #76A230;
+$color-up-lime-darkest: #47691B;
+
+//== Blue.
+$color-blue-light: #557AC9;
+$color-blue: #1F57C3;
+$color-blue-dark: #254D97;
+$color-midnight-blue: #1D4354;
+$color-twilight-blue: #2B5468;
+$color-dusk-blue: #336278;
+$color-highlight-blue: #0073D2;
+
+//== Gray.
+$color-background-gray: #F5F6F7;
+$color-cloud-gray: #F9F9F9;
+$color-ash-gray: #F2F2F2;
+$color-flannel-gray: #E0E0E0;
+$color-oyster-gray: #D1D1D1;
+$color-granite-gray: #A0A0A0;
+$color-smoke-gray: #656565;
+$color-carbonite-gray: #222222;
+$color-up-black-gray: $up-black;
+$color-gray-01: #65735B;
+
+//== Contextual colors.
+$color-yellow: #DEBE1A;
+$color-brick: #9B211B;
+$color-gold: #CDC52D;
+$color-skyLight: #6AD4CA;
+$color-sky: #01CDBE;
+$color-skyDark: #4BA798;
+$color-mint: #91E6B3;
+$color-forest: #13544E;
+$color-brown: #67541F;
+$color-kiwi: #97922D;
+$color-clay: #BC5118;
+$color-orange-red: #FF4B25;
+$color-pink: #F66DBC;
+$color-lilac: #BDA1E7;
+$color-heather: #A18085;
+
+//== Brand colors.
+$brand-default: $white;
+$brand-primary: $color-up-green;
+$brand-success: $color-up-green-dark;
+$brand-info: $color-sky;
+$brand-warning: $color-yellow;
+$brand-danger: $color-brick;
+
+//== Global styles.
+$container-large-desktop-max-width : 1280px;
+$container-desktop-laptop-max-width: 90%;
+$container-landscape-tablets-max-width: 90%;
+$container-small-devices-max-width: 90%;
+$footer-desktop-width: 1392px;
+$body-bg: $white;
+$text-color: $color-carbonite-gray;
+$placeholder-color: $color-smoke-gray;
+$link-color: $brand-primary;
+$link-hover-color: $brand-success;
+
+//== Dropshadows.
+$drop-shadow-none: none;
+$drop-shadow-default: 0 1px 5px 0 rgba(29,67,84,0.3);
+
+//== Font sizes.
+$font-size-10: 10px;
+$font-size-12: 12px;
+$font-size-13: 13px;
+$font-size-14: 14px;
+$font-size-15: 15px;
+$font-size-16: 16px;
+$font-size-17: 17px;
+$font-size-18: 18px;
+$font-size-20: 20px;
+$font-size-21: 21px;
+$font-size-22: 22px;
+$font-size-24: 24px;
+$font-size-25: 25px;
+$font-size-26: 26px;
+$font-size-28: 28px;
+$font-size-30: 30px;
+$font-size-32: 32px;
+$font-size-34: 34px;
+$font-size-36: 36px;
+$font-size-40: 40px;
+$font-size-44: 44px;
+$font-size-46: 46px;
+$font-size-50: 50px;
+$font-size-56: 56px;
+
+//== Line heights.
+$line-height-15: 15px;
+$line-height-17: 17px;
+$line-height-18: 18px;
+$line-height-20: 20px;
+$line-height-21: 21px;
+$line-height-22: 22px;
+$line-height-23: 23px;
+$line-height-24: 24px;
+$line-height-25: 25px;
+$line-height-26: 26px;
+$line-height-27: 27px;
+$line-height-28: 28px;
+$line-height-30: 30px;
+$line-height-32: 32px;
+$line-height-33: 33px;
+$line-height-34: 34px;
+$line-height-37: 37px;
+$line-height-40: 40px;
+$line-height-42: 42px;
+$line-height-43: 43px;
+$line-height-50: 50px;
+$line-height-58: 58px;
+$line-height-60: 60px;
+
+//== Typography.
+$font-family-sans-serif: 'Neue Montreal', Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+$font-family-rza: 'Rza';
+$font-size-base: 14px;
+$line-height-base: 1.428571429;
+$line-height-computed: floor(($font-size-base * $line-height-base));
+
+//== Letter spacings.
+$letter-spacing-base: 0.6px;
+$letter-spacing-rza: 0.6px;
+
+//== Font weights.
+$font-weight-100: 100;
+$font-weight-300: 300;
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700;
+
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+
+//== Iconography.
+$icon-font-path: '';
+
+//== Spacing.
+$space-0: 0;
+$space-1: 1px;
+$space-2: 2px;
+$space-3: 3px;
+$space-5: 5px;
+$space-10: 10px;
+$space-15: 15px;
+$space-20: 20px;
+$space-25: 25px;
+$space-30: 30px;
+$space-35: 35px;
+$space-40: 40px;
+$space-45: 45px;
+$space-50: 50px;
+$space-60: 60px;
+$space-70: 70px;
+$space-80: 80px;
+$space-100: 100px;
+$space-150: 150px;
+$space-300: 300px;
+
+//== Borders.
+$border-none: none;
+$border-transparent-small: 1px solid transparent;
+$border-transparent-base: 2px solid transparent;
+$border-transparent-large: 4px solid transparent;
+$border-ash-gray-small: 1px solid $color-ash-gray;
+$border-ash-gray-base: 2px solid $color-ash-gray;
+$border-ash-gray-large: 4px solid $color-ash-gray;
+$border-granite-gray-small: 1px solid $color-granite-gray;
+$border-granite-gray-base: 2px solid $color-granite-gray;
+$border-granite-gray-large: 4px solid $color-granite-gray;
+$border-flannel-gray-small: 1px solid $color-flannel-gray;
+$border-flannel-gray-base: 2px solid $color-flannel-gray;
+$border-flannel-gray-large: 4px solid $color-flannel-gray;
+$border-oyster-gray-small: 1px solid $color-oyster-gray;
+$border-oyster-gray-base: 2px solid $color-oyster-gray;
+$border-oyster-gray-large: 4px solid $color-oyster-gray;
+$border-twilight-blue-small: 1px solid $color-twilight-blue;
+$border-twilight-blue-base: 2px solid $color-twilight-blue;
+$border-twilight-blue-large: 4px solid $color-twilight-blue;
+$border-midnight-blue-small: 1px solid $color-midnight-blue;
+$border-midnight-blue-base: 2px solid $color-midnight-blue;
+$border-midnight-blue-large: 4px solid $color-midnight-blue;
+$border-dusk-blue-small: 1px solid $color-dusk-blue;
+$border-dusk-blue-base: 2px solid $color-dusk-blue;
+$border-dusk-blue-large: 4px solid $color-dusk-blue;
+$border-primary-small: 1px solid $brand-primary;
+$border-primary-base: 2px solid $brand-primary;
+$border-primary-large: 4px solid $brand-primary;
+$border-success-small: 1px solid $brand-success;
+$border-success-base: 2px solid $brand-success;
+$border-success-large: 4px solid $brand-success;
+$border-info-small: 1px solid $brand-info;
+$border-info-base: 2px solid $brand-info;
+$border-info-large: 4px solid $brand-info;
+$border-warning-small: 1px solid $brand-warning;
+$border-warning-base: 2px solid $brand-warning;
+$border-warning-large: 4px solid $brand-warning;
+$border-danger-small: 1px solid $brand-danger;
+$border-danger-base: 2px solid $brand-danger;
+$border-danger-large: 4px solid $brand-danger;
+
+//== Border radius.
+$border-radius-none: 0;
+$border-radius-default: 8px;
+$border-radius-xs: 2px;
+$border-radius-sm: 4px;
+$border-radius-base: 20px;
+$border-radius-small: 15px;
+$border-radius-large: 20px;
+$border-radius-extra-large: 30px;
+$border-radius-circle: 50%;
+
+$border-radius-sm-left: $border-radius-sm $border-radius-none $border-radius-none $border-radius-sm;
+$border-radius-sm-right: $border-radius-none $border-radius-sm $border-radius-sm $border-radius-none;
+$border-radius-default-left: $border-radius-default $border-radius-none $border-radius-none $border-radius-default;
+$border-radius-default-right: $border-radius-none $border-radius-default $border-radius-default $border-radius-none;
+
+//== Paddings.
+$padding-vertical-base: 8px;
+$padding-horizontal-base: 15px;
+$padding-vertical-large: 13px;
+$padding-horizontal-large: 30px;
+$padding-vertical-small: 8px;
+$padding-horizontal-small: 15px;
+$padding-vertical-xs: 1px;
+$padding-horizontal-xs: 5px;
+
+//== Components.
+$component-active-color: $white;
+$component-active-bg: $brand-primary;
+
+$caret-width-base: 4px;
+$caret-width-large: 5px;
+
+//== Buttons.
+$btn-font-weight: 500;
+$btn-default-color: $brand-primary;
+$btn-default-bg: $white;
+$btn-default-border: $color-oyster-gray;
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: $brand-primary;
+$btn-success-bg: $brand-success;
+$btn-success-border: $brand-success;
+$btn-info-bg: $brand-info;
+$btn-info-border: $brand-info;
+$btn-warning-bg: $brand-warning;
+$btn-warning-border: $brand-warning;
+$btn-danger-bg: $brand-danger;
+$btn-danger-border: $brand-danger;
+$button-padding-small: $padding-vertical-small $padding-horizontal-small;
+$button-padding-large: $padding-vertical-large $padding-horizontal-large;
+$btn-border-radius-base: $border-radius-base;
+$btn-border-radius-small: $border-radius-small;
+$btn-border-radius-large: $border-radius-large;
+$btn-line-height-small: 13px;
+$btn-line-height-large: 14px;
+
+//== Forms.
+$input-bg: $white;
+$input-bg-disabled: $color-background-gray;
+$input-color: $text-color;
+$input-padding: 13px 15px;
+$input-padding-small: 7px 15px;
+$input-border: $color-flannel-gray;
+$input-border-radius: $border-radius-sm;
+$input-border-radius-large: $border-radius-large;
+$input-border-radius-small: $border-radius-small;
+$input-border-focus: $brand-success;
+$input-color-placeholder: $color-smoke-gray;
+$input-height-base: ($line-height-computed + ($padding-base-vertical * 2) + 2);
+$input-height-small: (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2);
+$input-height-large: (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2);
+$form-group-margin-bottom: 15px;
+$legend-color: $color-smoke-gray;
+$legend-border-color: $color-flannel-gray;
+$input-group-addon-bg: $color-flannel-gray;
+$input-group-addon-border-color: $input-border;
+$cursor-disabled: not-allowed;
+
+//== Nav Tabs.
+$nav-tab-padding-large: 20px 20px;
+$nav-tab-padding-small: 7px 25px;
+$nav-tab-padding-vertical-small: 9px 20px;
+$nav-tabs-nav-after-background: #E4EBE4;
+$nav-tabs-nav-after-height: 2px;
+$nav-tabs-nav-after-border-radius: 1px;
+$nav-tabs-fixed-z-index: 2;
+$nav-tabs-fixed-top: 64px;
+$nav-tabs-fixed-max-width: $container-large-desktop-max-width;
+$nav-tabs-fixed-padding: 30px 0;
+$nav-tabs-fixed-width: 100%;
+$nav-tabs-fixed-991-top: 6px;
+$nav-tabs-mob-logo-margin: 6px auto 0 auto;
+$nav-tabs-mob-logo-width: 82px;
+
+//== Modals.
+$modal-inner-padding: 30px;
+$modal-title-padding: 20px;
+$modal-title-line-height: $line-height-base;
+$modal-content-bg: $white;
+$modal-content-border-color: $color-flannel-gray;
+$modal-content-fallback-border-color: $color-oyster-gray;
+$modal-backdrop-bg: $black;
+$modal-backdrop-opacity: 0.5;
+$modal-header-border-color: $color-flannel-gray;
+$modal-footer-border-color: $modal-header-border-color;
+$modal-lg: 900px;
+$modal-md: 600px;
+$modal-sm: 300px;
+
+
+
+
+
+
+
+
+
+
+
+/* ================================= Air 3.0 rules ===================================== */
+$up-0:0;
+$up-1:1;
+$up-3:3;
+$up-9:9;
+$up-27:27;
+$up-78:78;
+
+$text-align-left : left;
+$text-align-right : right;
+$regular-transition: all 0.3s ease-in-out;
+$border-radius-for-round : 50%;
+$regular-letter-spacing : 0.6px;
+$font-neue-montreal : 'Neue Montreal';
+$normal-h1-font-size : 40px;
+$normal-h1-font-weight : 500;
+$normal-h1-line-height : 42px;
+$normal-h1-letter-spacing : 0.12px;
+$normal-h1-color: $up-black;
+
+/* header */
+$logo-height: 24px;
+$logo-width: 82px;
+$logo-margin: 20px 12px 0 0;
+$header-margin-bottom: 32px;
+$header-link-padding: 22px 10px;
+$header-link-padding-desktop-laptop: 22px 10px;
+
+$header-link-font: 'Neue Montreal';
+$header-link-font-weight: 500;
+$header-link-font-size: 14px;
+$header-link-letter-spacing: 0.022em;
+$header-link-color: $up-black;
+$avatar-padding: 0;
+$avatar-margin: 16px 0 0 24px;
+$search-container-margin-bottom : 24px;
+$search-cont-padding: 16px 0;
+$search-field-padding: 6px 12px 6px 38px;
+$search-popular-tabs-cont-margin: 0 0 0 1px;
+$search-popular-tabs-cont-padding: 0;
+$search-popular-tabs-margin: 0 0 0 8px;
+$search-popular-tab-link-padding: 6px 12px 9px;
+$search-popular-tab-link-height: 32px;
+$search-popular-tab-link-bg: #D5E0D5;
+$search-popular-tab-link-border-radius: 20px;
+$search-popular-tab-link-font: 'Neue Montreal';
+$search-popular-tab-link-font-size: 14px;
+$search-popular-tab-link-line-height: 20px;
+$search-popular-tab-link-color: #001E00;
+
+/* breadcrumb */
+$breadcrumb-text-color: $up-black;
+$breadcrumb-margin: 0 0 32px 0;
+$breadcrumb-padding: 0;
+$breadcrumb-font-size: 0;
+$breadcrumb-font-font: 'Neue Montreal';
+$breadcrumb-font-size: 14px;
+$breadcrumb-font-line-height: 20px;
+$breadcrumb-font-letter-spacing: 0.022em;
+$breadcrumb-font-color: #001E00;
+$breadcrumb-first-image-link: "//theme.zdassets.com/theme_assets/9131565/152d2f9666d1020466470fce0b5092be7a6eec9d.svg";
+$breadcrumb-first-width: 51px;
+$breadcrumb-first-height: 16px;
+$breadcrumb-first-width: 16px;
+$breadcrumb-first-after-height: 7px;
+$breadcrumb-first-after-width: 7px;
+$breadcrumb-first-after-image-link: "//theme.zdassets.com/theme_assets/9131565/8dfcf7c0e01678b51679d894851db2fd4c27d4bd.svg";
+$breadcrumb-first-after-margin: 0 8px;
+
+$mob-bc-title-font-size: 40px;
+$mob-bc-title-margin-bottom: 30px;
+
+/* popular topics - Home page*/
+
+
+/* footer */
+$footer-padding: 32px;
+$footer-bg-color: $up-black;
+$footer-container-padding: 76px 0 52px 0;
+$footer-container-max-width: 1600px;
+$footer-border-radius: 10px;
+$footer-link-font: 'Neue Montreal';
+$footer-link-font-size: 14px;
+$footer-link-line-height: 30px;
+$footer-link-letter-spacing: 0.6px;
+$footer-link-color: #FFFFFF;
+$footer-si-margin-top: 64px;
+$footer-si-margin-bottom: 16px;
+$footer-si-padding: 0 0 16px 0;
+$footer-si-border-bottom: 1px solid #9AAA97;
+$footer-si-width: 40px;
+$footer-si-height: 40px;
+$footer-si-margin-right: 10px;
+$footer-si-border: 1px solid white;
+$footer-si-border-radius: 50%;
+$footer-si-icon-top: 11px;
+$footer-title-font: 'Neue Montreal';
+$footer-title-font-size: 14px;
+$footer-title-line-height: 18px;
+$footer-title-letter-spacing: 0.4px;
+$footer-title-font-color: #D5E0D5;
+$footer-title-margin-right: 17px;
+$footer-copyright-font: 'Neue Montreal';
+$footer-copyright-font-size: 11px;
+$footer-copyright-line-height: 13px;
+$footer-copyrigt-color: #FFFFFF;
+$footer-copyright-margin: 16px 0 0 0;
+$footer-max-width-container : $container-large-desktop-max-width;
+
+/* home page rules A */ 
+/* section hero */ 
+$hero-general-padding:32px;
+$hero-general-bg-color: #13544E;
+$hero-general-font-size: 20px;
+$hero-font-color: #ffffff;
+$hero-sub-heading-font-size : 32px; 
+$hero-title-bottom-space : 16px;
+$hero-heading-margin : 0 0 16px 0;
+$hero-heading-padding : 0;
+$hero-search-top-text-line-height : 24px;
+$hero-search-top-text-width: 65%;
+$hero-search-field-font-size : 16px;
+$hero-search-width : 472px;
+$hero-search-height : 56px;
+$hero-search-color : #5E6D55;
+$hero-search-border-radius : 28px;
+$hero-search-line-height : 22px;
+$hero-search-font-weight: 500;
+$hero-search-font-family : 'Neue Montreal';
+$hero-search-button-padding : 4px;
+$hero-search-btn-diamension : 48px;
+$hero-search-btn-bg: $up-light-green;
+$hero-margin-bottom : 50px;
+$hero-corner-radius : 16px;
+
+/* section nav */ 
+$category-heading-bottom : 32px;
+$nav-cont-max-width: 1600px;
+$nav-cont-margin: $space-0 ($space-30 - $space-2) $space-0 $space-0;
+$nav-link-font-size : 16px;
+$nav-link-line-height : 170%;
+$nav-link-color-normal : #5E6D55;
+$nav-link-color-active : $up-black;
+$nav-link-normal-border : 2px solid transparent;
+$nav-link-active-border : 2px solid $nav-link-color-active;
+$nav-link-font-family: $font-neue-montreal;
+$nav-section-margin-bottom: 6px;
+$nav-default-padding: 0 32px;
+
+/* section popular topics */ 
+$popular-topics-cont-bg: $gray-05;
+$popular-topics-text-container-padding: 56px 0 0 0;
+$popular-topics-cont-margin-bottom: 48px;
+$popular-topic-cont-padding: 24px;
+$popular-topic-icon-size: 32px;
+$popular-topic-internal-cat-height: 205px;
+$popular-topic-cont-margin-left: -16px;
+$popular-topic-cont-margin-right: -16px;
+$popular-topic-category-width: 25%;
+$popular-topic-category-padding: 0 16px 32px 16px;
+$popular-topic-item-width: 100%;
+$popular-topic-item-height: 180px;
+$popular-topic-item-p-color: #5E6D55;
+$popular-topic-heading-visitor-margin: 0 0 32px 0;
+$popular-topic-nav-link-padding: 0 4px;
+$popular-topic-nav-link-after-width: 100%;
+$popular-topic-nav-link-after-bottom: -2px;
+$popular-topic-nav-link-after-height: 2px;
+$popular-topic-nav-link-border-radius: 1px;
+$popular-topic-nav-link-active: 100%;
+$popular-topic-nav-link-active-bottom: -2px;
+$popular-topic-nav-link-active-height: 2px;
+$popular-topic-nav-link-border-radius: 1px;
+$popular-topic-item-p-height: 40px;
+$popular-topic-item-heading-font-size: 24px;
+$popular-topic-item-heading-line-height: 28px;
+$popular-topic-item-heading-font: 'Neue Montreal';
+$popular-topic-item-heading-letter-spacing: 0.24px;
+$popular-topic-item-heading-height: 53px;
+$popular-topic-text-container-margin: 0 0 0 52px;
+
+/* section instant help */ 
+$instant-help-cont-border-radius: 8px;
+$instant-help-cont-bg: $gray-05;
+$instant-help-cont-padding: 24px;
+$instant-help-margin-bottom: 80px;
+$instant-help-heading-font: 'Neue Montreal';
+$instant-help-heading-font-size: 24px;
+$instant-help-heading-line-height: 28px;
+$instant-help-heading-color: #001E00;
+$instant-help-heading-letter-space: 0.24px;
+$instant-help-heading-margin-bottom: 4px;
+$instant-help-font-weight: 500;
+$instant-help-text-size: 14px;
+$instant-help-text-line-height: 20px;
+$instant-help-text-letter-space: 0.022em;
+$instant-help-text-color: #5E6D55;
+
+/* section profile ad */
+$profile-ad-bg-new-to-upwork: $aws-base-path + '/new-to-upwork.svg';
+$profile-ad-bg-current-status: $aws-base-path + '/status-upwork-services.svg';
+$profile-ad-bg-community: $aws-base-path + '/community.svg';
+$profile-ad-bg-personalized-service: $aws-base-path + '/customer-service-female.svg';
+
+
+$profile-ad-bg-position: right 50px bottom 0;
+$profile-ad-bg-position-768: right 30px bottom 0;
+$profile-ad-bg-community-position-768: right 30px bottom -62px;
+$profile-ad-bg-size: auto 50%;
+$profile-ad-bg-size-768: auto 45%;
+$profile-ad-bg-size-600: 35% auto;
+$profile-ad-bg: #1F57C3;
+$profile-ad-cont-border-radius: 16px;
+$profile-ad-cont-padding: 32px;
+$profile-ad-text-color: #ffffff;
+$profile-ad-cont-margin-bottom: 80px;
+$profile-ad-font: 'Neue Montreal';
+$profile-ad-font-size: 20px;
+$profile-ad-text-line-height: 24px;
+$profile-ad-text-letter-spacing: 0.32px;
+$profile-ad-text-margin-bottom: 16px;
+$profile-ad-h3: 'Rza';
+$profile-ad-h3-size: 32px;
+$profile-ad-h3-line-height: 36px;
+$profile-ad-h3-letter-spacing: -0.032em;
+$profile-ad-h3-margin-bottom: 40px;
+$profile-ad-h3-width: 100%;
+$profile-ad-button-color: #001E00;
+$profile-ad-button-height: 40px;
+$profile-ad-button-line-height: 20px;
+$profile-ad-button-bg: #ffffff; 
+$profile-ad-button-border-radius: 20px;
+$profile-ad-button-padding: 12px 24px;
+$profile-ad-button-font-size: 16px;
+$profile-ad-button-opacity: 0.9;
+
+/* section recommended topics */
+$rt-cont-margin-bottom: 44px;
+$rt-heading-margin: $space-0 $space-0 ($space-30 * 2);
+$rt-text-font: 'Neue Montreal';
+$rt-topic-cont-border: 1px solid $gray-05;
+$rt-topic-cont-margin: 0 0 30px 0;
+$rt-topic-cont-padding: 15px; 
+$rt-title-font-size: 20px;
+$rt-title-line-height: 24px;
+$rm-title-margin-bottom: 8px;
+$rt-title-letter-spacing: 0.32px;
+$rt-title-height: 24px;
+$rt-title-text-decoration: underline;
+$rt-title-color: #1F57C3;
+$rt-title-text-decoration: underline;
+$rt-p-font-size: 14px;
+$rt-p-line-height: 20px;
+$rt-p-letter-spacing: 0.022em;
+$rt-p-color: #5E6D55;
+$rt-p-min-height: 40px;
+$rt-p-margin-bottom: 16px;
+/* home page rules Z */ 
+
+/* article page A*/
+$article-page-padding-top: 16px;
+$article-page-title-margin: 0 0 32px 0;
+$left-content-large-desktop-max-width: 823px;
+$right-content-large-desktop-max-width: 288px;
+$left-content-laptop-desktop-max-width: 70%;
+$right-content-laptop-desktop-max-width: 23%;
+$left-content-landscape-tablets-max-width: 100%;
+$left-content-small-devices-max-width: 100%;
+$right-content-landscape-tablets-max-width: 20%;
+$sidebar-heading-font: 'Neue Montreal';
+$sidebar-heading-font-size: 24px;
+$sidebar-heading-line-height: 28px;
+$sidebar-heading-letter-spacing: 0.24px;
+$sidebar-list-margin: 32px 0 0 0;
+$sidebar-list-border-left: 2px solid $gray-05;
+$sidebar-list-item-padding: 0 10px;
+$sidebar-list-item-margin: 12px 0;
+$sidebar-list-item-hover: 2px solid $brand-primary;
+$sidebar-item-link-font: 'Neue Montreal';
+$sidebar-item-font-size: 16px;
+$sidebar-item-font-color: #5E6D55;
+/* article page Z*/
+
+/* category page A*/
+$category-section-page-padding-top: 16px;
+$category-block-margin-top: 80px;
+$category-title-font: 'Neue Montreal';
+$category-title-font-size: 32px;
+$category-title-line-height: 36px;
+$category-title-letter-spacing: 0.16px;
+$category-title-font-color: #001E00;
+$category-title-margin: 0 0 32px 0;
+$category-article-list-columns: 2;
+$section-article-list-column: 1;
+$category-article-list-font: 'Neue Montreal';
+$category-article-list-font-size: 16px;
+$category-article-list-line-height: 22px;
+$category-article-list-letter-spacing: 0.02em;
+$category-article-list-font-color: #1F57C3;
+$category-article-list-margin-bottom: 16px;
+/* category page Z*/
+
+/* error page */
+$err-box-margin: 0 auto 0 auto;
+$err-heading-font-size: 40px;
+$err-heading-line-height: 42px;
+$err-heading-letter-spacing: -1.2px;
+$err-heading-color: $up-black;
+$err-heading-margin: 0 auto 8px auto;
+$err-subh-font-size: 16px;
+$err-subh-line-height: 22px;
+$err-subh-letter-spacing: 0.02em;
+$err-subh-color: #001E00;
+$err-subh-margin: 0 auto 40px auto;
+$err-sbox-max-width: 608px;
+$err-sbox-height: 40px;
+$err-sbox-input-font-size: 14px;
+$err-sbox-input-left: 0;
+$err-sbox-input-width: 100%;
+$err-sbox-input-height: 40px;
+$err-sbox-border: 2px solid #E4EBE4;
+$err-sbox-border-radius: 20px;
+$err-sbox-padding: 0 0 0 40px;
+$err-sbox-margin: 0;
+$err-sbox-color: $gray-01;
+$err-sbox-submit-font-size: 16px;
+$err-sbox-submit-line-height: 40px;
+$err-sbox-submit-left: 0;
+$err-sbox-submit-width: 40px;
+$err-sbox-submit-height: 40px;
+$err-sbox-submit-color: #001E00;
+$err-sbox-submit-border: 0;
+$err-sbox-submit-padding: 0;
+$err-sbox-submit-margin: 0;
+$err-sbox-submit-border-radius: 20px 0 0 20px;
+$err-sbox-submit-span-top: 4px;
+$err-sbox-submit-span-left: 4px;
+$err-sbox-submit-icon-font-size: 20px;
+
+/* my requests page */
+$my-req-nav-cont-width: 100%;
+$my-req-nav-cont-border: 2px solid #E4EBE4;
+$my-req-nav-cont-top: 1px;
+$my-req-nav-nav-padding: 0;
+$my-req-nav-nav-margin: 0;
+$my-req-nav-nav-font-size: 0;
+$my-req-nav-nav-li-margin: 0 32px 0 0;
+$my-req-nav-nav-active-after-border-right: 4px solid white;
+$my-req-nav-nav-active-after-bg-color: #001E00;
+$my-req-nav-nav-active-after-height: 2px;
+$my-req-nav-nav-active-after-bottom: -1px;
+$my-req-nav-nav-active-after-width: 100%;
+$my-req-nav-nav-active-after-border-radius: 10px;
+$my-req-nav-nav-active-after-z-index: 1;
+$my-req-nav-nav-item-height: 27px;
+$my-req-nav-nav-item-line-height: 27px;
+$my-req-nav-nav-item-font: 'Neue Montreal';
+$my-req-nav-nav-item-font-size: 16px;
+$my-req-nav-nav-item-color: #001E00;
+$my-req-nav-nav-item-padding: 0; 
+$my-req-margin: 25px 0;
+$my-req-table-toolbar-margin: 34px 0;
+$my-req-table-toolbar-before-width: 24px;
+$my-req-table-toolbar-before-height: 24px;
+$my-req-table-toolbar-before-bg-size: 24px 24px;
+$my-req-table-toolbar-before-z-index: 2;
+$my-req-table-toolbar-before-top: 5px;
+$my-req-table-toolbar-before-left: 10px;
+$my-req-text-padding: 8px 16px 8px 35px;
+$my-req-text-border: 2px solid #E4EBE4;
+$my-req-text-border-radius: 20px;
+$my-req-text-width: 80%;
+$my-req-status-width: 18%;
+$my-req-status-button-width: 100%;
+$my-req-status-dropdown-width: 100%;
+$my-req-status-dropdown-left: 0;
+$my-req-activities-table-padding: 0;
+$my-req-activities-table-font: 'Neue Montreal';
+$my-req-activities-table-font-size: 16px;
+$my-req-activities-table-line-height: 22px;
+$my-req-activities-table-letter-spacing: 0.02em;
+$my-req-activities-table-padding: 11px;
+$my-req-activities-table-head-border-bottom: 1px solid $gray-05;
+
+/* Utilities */
+$dropdown-menu-padding: 8px 0;
+$dropdown-menu-bg: $white;
+$dropdown-menu-box-shadow: 0px 0px 10px 2px rgba(0, 30, 0, 0.15);
+$dropdown-menu-border-radius: 6px;
+$dropdown-menu-li-a-padding: 6px 15px;
+$dropdown-menu-li-a-font-weight: 500;
+$dropdown-menu-li-a-color: $up-black;
+$dropdown-menu-li-a-font-size: 14px;
+$dropdown-menu-li-a-font: $font-neue-montreal;
+$dropdown-menu-li-a-line-spacing: 0.4px;
+$dropdown-menu-li-a-line-height: 20px;
+$dropdown-menu-caret-br-left: 6px;
+$dropdown-menu-caret-br-right: 6px;
+$dropdown-menu-caret-width: 16px;
+$dropdown-menu-caret-height: 16px;
+$dropdown-menu-caret-bg: $white;
+$dropdown-menu-caret-top: -8px;
+$dropdown-menu-caret-left: 34px;
+$dropdown-menu-caret-right: 0;
+$dropdown-menu-caret-right-for-nav: 25px;
+$dropdown-menu-caret-box-shadow: -2px 2px 3px rgba(57,73,76,.1);
+$dropdown-menu-caret-index: -2;
+$dropdown-menu-caret-border-right: 8px solid transparent;
+$dropdown-menu-caret-border-left: 8px solid white;
+$dropdown-menu-caret-border-top: 8px solid white;
+$dropdown-menu-caret-border-bottom: 8px solid transparent;

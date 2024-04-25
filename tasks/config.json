@@ -1,0 +1,33 @@
+{
+	"env": [
+		"dev",
+		"prod",
+		"stage"
+	],
+	"framework" : {
+		"styles" : "./lib/framework/sass/styles.scss",
+		"scripts" : [
+			"./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",
+
+			"./lib/framework/js/io.js",
+			"./lib/framework/js/vars.js",
+			"./lib/framework/js/format.js",
+			"./lib/framework/js/oauth.js",
+			"./lib/framework/js/users.js",
+			"./lib/framework/js/utilities.js",
+			"./lib/framework/js/detectDevice.js",
+			"./lib/framework/js/detectBrowser.js",
+
+			"./lib/framework/js/core/smf.js",
+			"./lib/framework/js/core/form.js",
+			"./lib/framework/js/core/modals.js",
+			"./lib/framework/js/core/carousel.js",
+			"./lib/framework/js/core/breadcrumbs.js",
+			"./lib/framework/js/core/paginations.js"
+		]
+	},
+	"watch": {
+		"styles": "./lib/**/*.scss",
+		"scripts": "./lib/**/*.js"
+	}
+}

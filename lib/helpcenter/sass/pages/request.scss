@@ -1,0 +1,144 @@
+//
+// Page - Request
+// --------------------------------------------------
+
+
+.request-page {
+    .request-id {
+        margin-top: $space-20;
+        margin-bottom: $space-0;
+
+        color: $text-color;
+
+        @media (max-width: 768px) {
+            margin-left: $space-15;
+        }
+    }
+
+    .request-sidebar {
+        margin: $space-30 $space-0;
+        padding: $space-30;
+
+        transition: all 0.3s ease-in-out;
+
+        border: $border-flannel-gray-small;
+
+        h3 {
+            display: none;
+
+            cursor: pointer;
+
+            span {
+                float: right;
+
+                color: $brand-primary;
+            }
+        }
+
+        .request-details {
+            hr {
+                padding-top: $space-30;
+                padding-bottom: $space-30;
+
+                border-top: $border-flannel-gray-small;
+            }
+
+            dt {
+                display: inline-block;
+
+                width: $space-60 * 2;
+
+                vertical-align: top;
+
+                color: $color-carbonite-gray;
+            }
+
+            dd {
+                font-size: $font-size-14;
+
+                display: inline-block;
+
+                vertical-align: top;
+
+                ul {
+                    padding-left: $space-10;
+                }
+            }
+        }
+
+        @media (max-width: 991px) {
+            padding: $space-0 $space-20;
+
+            h3 {
+                display: block;
+
+                span {
+                    margin-right: $space-0;
+                }
+            }
+
+            hr,
+            .request-details {
+                display: none;
+
+                margin-top: $space-20;
+            }
+        }
+    }
+
+    .request-attachments-sidebar {
+        margin: $space-30 $space-0;
+        padding: $space-30;
+
+        transition: all 0.3s ease-in-out;
+
+        border: $border-flannel-gray-small;
+
+        h3 {
+            margin: $space-0;
+            padding-bottom: $space-20;
+        }
+
+        .request-attachments {
+            display: block;
+
+            width: 100%;
+            margin-top: $space-0;
+            padding: $space-0;
+
+            list-style: none;
+
+            li {
+                padding: $space-0 $space-0 $space-10;
+
+                a {
+                    line-height: 16px;
+
+                    display: inline-block;
+                    overflow: hidden;
+
+                    width: 100%;
+
+                    vertical-align: top;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+
+                    span[class*='air-icon-'] {
+                        margin-right: $space-5;
+                        margin-left: $space-0;
+                    }
+                }
+
+                .attachment-meta {
+                    display: block;
+                }
+            }
+        }
+
+        @media (max-width: 767px) {
+            display: none;
+
+            padding-bottom: $space-0;
+        }
+    }
+}

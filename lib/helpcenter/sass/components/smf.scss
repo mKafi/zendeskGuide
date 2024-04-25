@@ -1,0 +1,42 @@
+//
+// Components - SMF
+// --------------------------------------------------
+
+.section-smf {
+    &.home-page,
+    &.search-page,
+    &.article-page,
+    &.section-page,
+    &.category-page,
+    &.request-page,
+    &.new-request-page,
+    &.my-requests-page {
+        .alert {
+            &:first-child {
+                margin-top: $space-0;
+            }
+        }
+    }
+
+    &.article-page,
+    &.section-page,
+    &.category-page,
+    &.my-requests-page {
+        
+    }
+
+    &.article-page,
+    &.section-page,
+    &.category-page,
+    &.request-page,
+    &.new-request-page,
+    &.my-requests-page {
+        .alert {
+            width: 100%;
+        }
+    }
+    button.close{
+        position: relative;
+        top: 2px;
+    }
+}

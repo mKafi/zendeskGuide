@@ -1,0 +1,219 @@
+//
+// Components - Forms - Feedback
+//
+
+
+.btn-feedback {
+    font-size: $font-size-16;
+    font-weight: $btn-font-weight;
+    line-height: $btn-line-height-small;
+    position: fixed;
+    top: 49.5%;
+    right: -34px;
+    padding: $button-padding-small;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    transform: rotate(-90deg);
+    color: $white;
+    border: $border-none;
+    border-radius: $border-radius-default $border-radius-default 0 0;
+    background-color: $brand-primary;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $brand-success;
+    }
+}
+
+.helpcenter-feedback-modal {
+    .modal-dialog {
+        max-width: 460px;
+        margin: 5% auto;
+    }
+
+    .modal-body {
+        .form-field {
+            margin-bottom: $space-40;
+
+            &.csat-ratings,
+            &.article-improve {
+                margin-bottom: $space-20;
+            }
+
+            label {
+                margin-top: $space-0;
+            }
+        }
+
+        .ces-ratings,
+        .nps-ratings {
+            ul {
+                margin: $space-0;
+                padding: $space-0;
+
+                li {
+                    line-height: $space-30;
+
+                    display: inline-block;
+
+                    width: $space-30;
+                    height: $space-30;
+                    margin-right: 7px;
+                    margin-bottom: $space-5;
+                    padding: $space-0 $space-10;
+
+                    cursor: pointer;
+
+                    color: $placeholder-color;
+                    border: $border-granite-gray-small;
+                    border-radius: $border-radius-circle;
+
+                    &:nth-child(10) {
+                        margin-right: $space-0;
+                        padding: $space-0 7px;
+                    }
+
+                    &:hover,
+                    &:focus,
+                    &:active,
+                    &.checked {
+                        color: $white;
+                        border: $border-transparent-small;
+                        background-color: $brand-primary;
+                    }
+                }
+            }
+        }
+
+        .ratings-label {
+            font-size: $font-size-12;
+
+            display: block;
+
+            color: $placeholder-color;
+
+            .rating-disagree-label {
+                display: inline;
+                float: left;
+            }
+
+            .rating-agree-label {
+                display: inline;
+                float: right;
+            }
+        }
+
+        .article-improve {
+            width: 100%;
+            margin: $space-20 $space-0 $space-20;
+
+            .dropdown-menu {
+                left: $space-0;
+
+                width: 100%;
+
+                > li {
+                    padding: $space-10 $space-20;
+
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .additional-feedback {
+            margin-bottom: $space-0;
+
+            label {
+                margin-bottom: $space-0;
+
+                cursor: pointer;
+
+                color: $brand-primary;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    text-decoration: underline;
+
+                    color: $brand-success;
+                }
+            }
+        }
+
+        .additional-feedback-field {
+            width: 100%;
+            min-height: 100px;
+            margin: $space-25 $space-0 $space-0 $space-0;
+            padding: $input-padding;
+
+            color: $text-color;
+        }
+    }
+
+    .modal-footer {
+        position: relative;
+    }
+}
+
+@media (max-width: 767px) {
+    .helpcenter-feedback-modal {
+        .modal-body {
+            .form-field {
+                label {
+                    font-size: $font-size-13;
+                }
+            }
+            .ces-ratings,
+            .nps-ratings {
+                ul {
+                    li {
+                        line-height: $line-height-25;
+
+                        width: $space-25;
+                        height: $space-25;
+                        padding: $space-0 8px;
+
+                        &:nth-child(10) {
+                            padding: $space-0 $space-5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .helpcenter-feedback-modal {
+        .modal-body {
+            .ces-ratings,
+            .nps-ratings {
+                ul {
+                    li {
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .helpcenter-feedback-modal {
+        .modal-body {
+            .ces-ratings,
+            .nps-ratings {
+                ul {
+                    li {
+                        line-height: $line-height-24;
+
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+}

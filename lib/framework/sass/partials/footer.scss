@@ -1,0 +1,175 @@
+.footer {
+    padding: $footer-padding;
+    .footer-container{
+        background-color: $footer-bg-color;
+        padding: $footer-container-padding;
+        border-radius: $footer-border-radius;
+        max-width: $footer-container-max-width;
+        margin-left: auto;
+        margin-right: auto;
+        .container{
+            max-width: $footer-max-width-container;
+            .row.footer-social-cont{
+                &::after{
+                    content: '';
+                    display: block;
+                    border-bottom: $footer-si-border-bottom;
+                    margin-left: $space-15;
+                    margin-right: $space-15;
+                }
+            }
+            .footer-nav {
+                display: inline-block;        
+                margin: $space-0;
+                padding: $space-0;
+                list-style: none;
+                vertical-align: middle;
+                a {
+                    font-family: $footer-link-font;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: $footer-link-font-size;
+                    line-height: $footer-link-line-height;
+                    letter-spacing: $footer-link-letter-spacing;
+                    color: $footer-link-color;
+                }
+            }
+
+            .footer-nav-bar, .footer-nav-apps {
+                margin-top: $footer-si-margin-top;
+                margin-bottom: $footer-si-margin-bottom;
+                padding: $footer-si-padding;
+                border-bottom: $footer-si-margin-bottom;
+                
+                .footer-nav-title {
+                    font-family: $footer-title-font;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: $footer-title-font-size;
+                    line-height: $footer-title-line-height;
+                    letter-spacing: $footer-title-letter-spacing;
+                    color: $footer-title-font-color;
+                    display: inline-block;
+                    margin-right: $footer-title-margin-right;
+                }
+                
+                ul {
+                    display: inline-block;
+                    margin: $space-0;
+                    padding: $space-0;
+                    list-style: none;
+                    vertical-align: top;
+                    li {                    
+                        margin-right: $footer-si-margin-right;  
+                        display: inline-block;                  
+                        .social-icon-cont{
+                            display: inline-block;
+                            width: $footer-si-width;
+                            height: $footer-si-height;                                                
+                            border: $footer-si-border;
+                            text-align: center;
+                            border-radius: $footer-si-border-radius;
+                            transition: all 0.3s ease-in-out;
+                            &:hover{
+                                background-color: $gray-01;
+                            }
+                            .social-icon, .apps-icon {
+                                display: inline-block;
+                                position: relative;
+                                top: $footer-si-icon-top;
+                            }
+                        }
+                    }
+                }
+            }            
+        }
+    }
+    
+    .social-icon {        
+        background: url("https://theme.zdassets.com/theme_assets/9131565/bee49010a117523a8c5cee5472957279fb3beb7e.png") no-repeat;
+        overflow: hidden; 
+        text-indent: -9999px; 
+        text-align: left;
+        &.social-icon-facebook {
+            background-position: -0px -78px; width: 8px; height: 14px;
+        }
+
+        &.social-icon-linkedin {
+            background-position: -0px -0px; width: 15px; height: 14px;
+        }
+
+        &.social-icon-twitter {
+            background-position: -0px -28px; width: 14px; height: 12px;
+        }
+
+        &.social-icon-youtube {
+            background-position: -0px -40px; width: 14px; height: 10px;
+        }
+
+        &.social-icon-instagram {
+            background-position: -0px -14px; width: 14px; height: 14px;
+        }
+    }
+
+    .apps-icon {
+        background: url("https://theme.zdassets.com/theme_assets/9131565/bee49010a117523a8c5cee5472957279fb3beb7e.png") no-repeat;
+        overflow: hidden; 
+        text-indent: -9999px; 
+        text-align: left;
+        &.apps-icon-android {            
+            background-position: -0px -64px; width: 12px; height: 14px;
+        }
+        &.apps-icon-ios {            
+            background-position: -0px -50px; width: 13px; height: 14px;
+        }
+    }
+
+    .copyright {
+        font-family: $footer-copyright-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: $footer-copyright-font-size;
+        line-height: $footer-copyright-line-height;
+        color: $footer-copyrigt-color;
+        margin: $footer-copyright-margin;
+        text-align: center;
+    }
+
+    @media (max-width: 991px) {
+        .footer-container{
+            .container{ 
+                .footer-nav-bar, .footer-nav-apps {  
+                    margin-bottom: $space-0;
+                    ul{
+                        li{
+                            margin-bottom: $footer-si-margin-bottom;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: $space-40 $space-0;
+        .footer-container{
+            padding: $space-40 $space-0;
+            .container{               
+                .footer-nav {
+                    padding: $space-10 $space-0 $space-30;
+                }
+                .footer-nav-bar, .footer-nav-apps {  
+                    margin-top: $space-0;                  
+                    .footer-nav-title{
+                        display: block;
+                        padding: $space-15 $space-0;
+                    }                    
+                }                
+            }
+        }
+    }
+    
+}
+.powered-by-zendesk {
+    display: none;
+}

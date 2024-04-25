@@ -1,0 +1,45 @@
+//
+// Mixins
+// --------------------------------------------------
+
+
+// Core mixins
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
+
+
+// Display - inline-block
+@mixin display-inline-block() {
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+// Style input placeholder
+@mixin input-placeholder() {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    &::placeholder {
+        opacity: 1;	/* Firefox */
+        color: $input-color-placeholder;
+    }
+
+    /* Firefox */
+    &::-moz-placeholder {
+        opacity: 1;
+        color: $input-color-placeholder;
+    }
+
+    /* Internet Explorer 10-11 */
+    &:-ms-input-placeholder {
+        color: $input-color-placeholder;
+    }
+
+    /* Microsoft Edge */
+    &::-ms-input-placeholder {
+        color: $input-color-placeholder;
+    }
+
+    /* Safari and Chrome */
+    &::-webkit-input-placeholder {
+        color: $input-color-placeholder;
+    }
+}

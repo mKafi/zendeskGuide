@@ -1,0 +1,146 @@
+//
+// Page - Error
+// --------------------------------------------------
+
+
+.error-page {
+    padding: $space-80 $space-0 ($space-30 * 6);
+    background-color: $white;
+
+    .icon-svg-alien {
+        width: 178px;
+        height: 160px;
+        margin-bottom: 64px;
+    }
+
+
+    .page-title {
+        margin: $err-box-margin;
+        .error-heading {
+            font-family: $font-family-rza;
+            font-style: normal;
+            font-weight: $font-weight-500;
+            font-size: $err-heading-font-size;
+            line-height: $err-heading-line-height;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: $err-heading-letter-spacing;
+            color: $err-heading-color;
+            margin: $err-heading-margin;
+            text-align: center;
+            display: block;
+
+            
+        }
+
+        .sub-heading {
+            font-family: $font-neue-montreal;
+            font-style: normal;
+            font-weight: $font-weight-500;
+            font-size: $err-subh-font-size;
+            line-height: $err-subh-line-height;
+            text-align: center;
+            letter-spacing: $err-subh-letter-spacing;
+            color: $err-subh-color;
+            margin: $err-subh-margin;
+        }
+
+        .search-box {
+            position: relative;           
+            form {
+                position: relative;
+                max-width: $err-sbox-max-width;
+                height: $err-sbox-height;
+                margin: auto;
+                input[type='search'] {
+                    background-color: transparent;
+                    font-size: $err-sbox-input-font-size;
+                    line-height: 100%;
+                    position: absolute;
+                    left: $err-sbox-input-left;
+                    width: $err-sbox-input-width;
+                    height: $err-sbox-input-height;
+                    transition: all 0.3s ease-in-out;
+                    border: $err-sbox-border;
+                    border-radius: $err-sbox-border-radius;
+                    padding: $err-sbox-padding;
+                    margin: $err-sbox-margin;
+                    font-family: $font-neue-montreal;
+                    font-weight: $font-weight-500;
+                    color: $err-sbox-color;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        outline: none;
+                    }
+                }
+
+                input[type='submit'],
+                button[type='submit'] {
+                    font-size: $err-sbox-submit-font-size;
+                    line-height: $err-sbox-submit-line-height;
+                    position: absolute;
+                    left: $err-sbox-submit-left;
+                    display: inline-block;
+                    width: $err-sbox-submit-width;
+                    height: $err-sbox-submit-height;
+                    cursor: pointer;
+                    color: $err-sbox-submit-color;
+                    border: $err-sbox-submit-border;
+                    background: transparent;
+                    padding: $err-sbox-submit-padding;
+                    margin: $err-sbox-submit-margin;
+                    border-radius: $err-sbox-submit-border-radius;
+                    
+                    &:hover,
+                    &:focus,
+                    &:active {                        
+                        color: $brand-success;
+                    }
+
+                    span {
+                        top: $err-sbox-submit-span-top;
+                        left: $err-sbox-submit-span-left;
+                        position: relative;
+                        &::before{
+                            font-size: $err-sbox-submit-icon-font-size;
+                        }
+                    }
+                }
+
+                input[type='submit'] {
+                    display: none;                    
+                }
+            }
+        }
+
+        .page-title-description {
+            font-size: $font-size-16;
+
+            margin: $space-0;
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .error-page {
+        .page-title {
+            .heading-visitor {
+                line-height: $font-size-56;
+            }
+
+            .search-box {
+                form {
+                    width: 290px;
+
+                    input[type='search'] {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+    }
+}

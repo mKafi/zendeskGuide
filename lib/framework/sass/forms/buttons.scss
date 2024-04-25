@@ -1,0 +1,131 @@
+ //
+// Forms - Buttons
+// --------------------------------------------------
+
+
+.btn {
+    font-size: $font-size-15;
+    font-weight: $font-weight-400;
+    line-height: $btn-line-height-large;
+    padding: $button-padding-large;
+    transition: all 0.3s ease-in-out;
+    border: $border-oyster-gray-small;
+    &:hover,
+    &:focus,
+    &:active {
+        border: $border-oyster-gray-small;
+        outline: none;
+        box-shadow: $drop-shadow-none;
+
+
+        &:focus {
+            outline: none;
+        }
+    }
+    span[class*='air-icon-'] {
+        margin-left: $space-0;
+    }
+}
+
+.btn-default {
+    color: $brand-primary;
+    border: $border-oyster-gray-small;
+    background-color: $white;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $brand-success;
+        background-color: $color-cloud-gray;
+        &:hover,
+        &:focus {
+            color: $brand-success;
+            background-color: $color-cloud-gray;
+        }
+    }
+}
+
+.btn-primary {
+    color: $white;
+    border: $border-none;
+    background-color: $brand-primary;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        border: $border-none;
+        background-color: $brand-success;
+
+        &:hover,
+        &:focus {
+            color: $white;
+            border: $border-none;
+            background-color: $brand-success;
+        }
+    }
+}
+
+.btn-success {
+    border: $border-none;
+
+    &:hover,
+    &:focus {
+        border: $border-none;
+    }
+}
+
+.btn-info {
+    border: $border-none;
+
+    &:hover,
+    &:focus {
+        border: $border-none;
+    }
+}
+
+.btn-warning {
+    border: $border-none;
+
+    &:hover,
+    &:focus {
+        border: $border-none;
+    }
+}
+
+.btn-danger {
+    border: $border-none;
+
+    &:hover,
+    &:focus {
+        border: $border-none;
+    }
+}
+
+.btn-link {
+    padding-right: 18px;
+    padding-left: 18px;
+
+    transition: all 0.3s ease-in-out;
+
+    border: $border-none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $brand-success;
+        border: $border-none;
+    }
+}
+
+.btn-lg {
+    font-size: $font-size-15;
+
+    padding: $button-padding-large;
+}
+
+.btn-sm {
+    font-size: $font-size-14;
+
+    padding: $button-padding-small;
+}

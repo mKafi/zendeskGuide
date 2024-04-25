@@ -1,0 +1,38 @@
+@media (max-width: 1200px){
+
+}
+@media (max-width: 992px){
+
+}
+@media (max-width: 767px){
+    
+}
+@media (max-width: 600px){
+    .section-hero{
+        text-align: center;
+        background-color: transparent;
+        .assets-hero{
+            .hero-text.section-title{
+                display: none;
+            }
+            .heading-visitor, .hero-text.sub-heading{
+                color: #001E00;
+                text-align: center;                
+                br{
+                    display: none;                
+                }
+            }
+            p{
+                width: 100%;
+            }
+            .search-box{
+                form{
+                    width: 100%;
+                }
+            }            
+        }
+        #hero-banner{
+            display: none;
+        }
+    }    
+}

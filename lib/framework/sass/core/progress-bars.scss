@@ -1,0 +1,24 @@
+//
+// Core - Progress Bars
+// --------------------------------------------------
+
+
+.progress {
+    margin: $space-0;
+
+    border-radius: $border-radius-none;
+    background: transparent;
+
+    .progress-bar {
+        background-color: $color-flannel-gray;
+
+        &.progress-bar-placeholder {
+            width: 37%;
+
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: scale-x 2s ease-in-out alternate infinite;
+            animation-delay: 0.3s;
+        }
+    }
+}

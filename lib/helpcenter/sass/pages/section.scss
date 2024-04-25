@@ -1,0 +1,29 @@
+.section-page {
+    .breadcrumbs-desktop {
+        .breadcrumbs {
+            li {
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px){
+
+}
+@media (max-width: 992px){
+
+}
+@media (max-width: 767px){
+    
+}
+@media (max-width: 600px){
+    .breadcrumbs-mobile{
+        .main-page-title {
+            font-size: $mob-bc-title-font-size;
+            margin-bottom: $mob-bc-title-margin-bottom;
+        }
+    }    
+}

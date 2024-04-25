@@ -1,0 +1,7 @@
+<ifmodule mod_headers.c>
+	SetEnvIf Origin "http(s)?://(odeskdev\.|upwork\.|support\.)?(zendesk.com|upwork.com)$" CORS_ORIGIN=$0
+	Header set Access-Control-Allow-Origin %{CORS_ORIGIN}e env=CORS_ORIGIN
+	Header set Access-Control-Allow-Methods: "GET"
+	Header set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+	Header set Access-Control-Allow-Credentials "true"
+</ifmodule>

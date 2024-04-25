@@ -1,0 +1,103 @@
+// Core - Paginations
+.search-pagination{
+    text-align: center;
+}
+.pagination {
+    ul {
+        margin: $space-0;
+        padding: $space-0;
+        list-style-type: none;
+        li {
+            display: inline-block;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 5px;
+            a, span {
+                font-size: $font-size-14;
+                font-weight: $font-weight-500;                
+                cursor: pointer;
+                color: $up-light-green;
+                border: $border-none;
+                border-bottom: $border-transparent-large;                
+                display: inline-block;
+                border: 1px solid transparent;
+                border-radius: 50%;                
+                width: ($space-25 - $space-1);
+                height: ($space-25 - $space-1);
+                line-height: $line-height-24;
+                text-align: center;
+                letter-spacing: $rt-p-letter-spacing;
+                outline: $space-0;
+                &:hover,
+                &:focus {
+                    text-decoration: none;
+                    color: $color-up-green;
+                    background-color: $gray-07;
+                    border: 1px solid $gray-04;
+                }
+                
+            }
+
+            &.pagination-current {
+                a, span{
+                    color: $white;
+                    background-color: $up-light-green;
+                    border: 1px solid transparent;
+                }
+            }
+
+            &.pagination-first,
+            &.pagination-last {
+                a {
+                    border: none;
+                    background-color: unset;
+                    width: unset;
+                }
+            }
+
+            &.pagination-prev,
+            &.pagination-next {
+                a {
+                    border: none;
+                    background-color: unset;
+                    width: unset;
+
+                    .pagination-icon {
+                        position: relative;
+                        top: 9px;
+
+                        display: inline-block;
+
+                        width: $space-25;
+                        height: $space-25;
+
+                        background-repeat: no-repeat;
+                        background-size: auto 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin-right: $space-15;
+        margin-left: $space-15;
+
+        ul {
+            li {
+                a {
+                    padding: $space-5;
+                }
+
+                &.pagination-current {
+                    padding: $space-5;
+                }
+
+                &.pagination-first,
+                &.pagination-last {
+                    display: none;
+                }
+            }
+        }
+    }
+}

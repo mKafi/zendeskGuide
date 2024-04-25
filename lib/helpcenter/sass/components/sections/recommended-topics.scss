@@ -1,0 +1,106 @@
+//
+// Components - Sections - Recommended-topics
+// --------------------------------------------------
+.section-recommended-topics {
+    .heading-visitor {
+        margin: $rt-heading-margin;        
+    }
+    #recommended-topics-cont{
+        margin-bottom: $rt-cont-margin-bottom;
+        .row{
+            margin-left: -15px;
+            margin-right: -15px;  
+            .rec-topic-cont{
+                border: $rt-topic-cont-border;
+                padding: $rt-topic-cont-padding;
+                border-radius: $border-radius-default;
+                margin: $rt-topic-cont-margin;
+                .topic-icon {
+                    display: block;
+                    margin-bottom: 24px;
+                    img{
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+                .topic-title{
+                    display: block;
+                    font-family: $rt-text-font;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: $rt-title-font-size;
+                    line-height: $rt-title-line-height;
+                    margin-bottom: $rm-title-margin-bottom;
+                    letter-spacing: $rt-title-letter-spacing;
+                    height: $rt-title-height;
+                    overflow: hidden;                
+                }
+                p{
+                    font-family: $rt-text-font;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: $rt-p-font-size;
+                    line-height: $rt-p-line-height;
+                    letter-spacing: $rt-p-letter-spacing;
+                    color: $rt-p-color;
+                    margin-bottom: $rt-p-margin-bottom;
+                    height: $rt-p-min-height;
+                    display: block;
+                    overflow: hidden;
+                }
+                a{
+
+                }
+            }
+        }
+    }
+
+    
+    @media (max-width: 1199px) {
+        .container {
+            width: 100%;
+        }
+
+        .carousel {
+            .carousel-control {
+                top: $space-40;
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        .carousel {
+            .carousel-control {
+                top: $space-150;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        #recommended-topics-cont {
+            .rec-topic-cont {
+                .topic-icon {
+                    display: inline-block;
+                    margin-bottom: 12px;
+                    margin-right: 12px;
+                }
+                a{
+                    display: inline-block;
+                }
+            }
+        }
+        .carousel {
+            .carousel-control {
+                top: 170px;
+
+                &.left {
+                    left: $space-20;
+                }
+
+                &.right {
+                    right: $space-20;
+                }
+            }
+        }
+    }
+}

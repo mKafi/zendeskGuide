@@ -1,0 +1,51 @@
+h3.box-heading {
+    font-family: 'Neue Montreal';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.16px;
+    color: #001E00;
+    margin-bottom: 32px;
+}
+
+.box-container {
+    border: $border-oyster-gray-small;
+    border-radius: $border-radius-default;
+    background-color: $white;
+
+    .box-heading {
+        font-size: $font-size-16;
+
+        margin: $space-0;
+        padding: $space-10 $space-20;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .box-container {
+        border-radius: $border-radius-none;
+    }
+}
+
+
+.article-page,
+.section-page,
+.category-page,
+.my-requests-page {
+    &.main {
+        padding: $space-0 $space-0 $space-30;
+
+        background-color: $color-background-gray;
+    }
+
+    &.section-cta-contact {
+        padding-top: $space-0;
+        .container {
+            padding: $space-0;
+        }
+    }
+}

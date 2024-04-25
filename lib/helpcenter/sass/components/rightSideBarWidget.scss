@@ -1,0 +1,27 @@
+.right-side-container {
+    padding-left: 34px;
+}
+.right-widget-link-cont {
+    border-left: 2px solid $gray-05;    
+}
+.right-side-widget-link {
+    display: block;
+    font-family: 'Neue Montreal';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: $gray-01;
+    margin: 24px 0;
+    padding: 0px 0 0px 10px;
+    &:first-child{
+        margin-top: $space-0;
+    }
+    &:last-child{
+        margin-bottom: $space-0;
+    }
+}
+.right-side-widget-link.active {
+    color: $up-black;
+    border-left: 2px solid $up-black;
+}

@@ -1,0 +1,109 @@
+//
+// Core - Navigation Tabs
+// --------------------------------------------------
+
+
+.nav {
+    &.nav-tabs {
+        border-bottom: $space-0;
+
+        > li {
+            > a {
+                font-size: $font-size-14;
+                line-height: $btn-line-height-small;
+
+                margin: $space-0;
+                padding: $button-padding-small;
+
+                cursor: pointer;
+
+                color: $color-carbonite-gray;
+                border: $border-none;
+                border-top: $border-transparent-small;
+                border-radius: $border-radius-none;
+                outline: $space-0;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $brand-success;
+                    border: $border-none;
+                    border-top: $border-transparent-small;
+                    background-color: transparent;
+                }
+            }
+
+            &.active {
+                > a {
+                    color: $brand-primary;
+                    border: $border-none;
+                    border-bottom: $border-primary-small;
+                    background-color: $white;
+
+                    &:hover,
+                    &:focus {
+                        color: $color-carbonite-gray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .nav-tabs-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        white-space: nowrap;
+        .nav-tabs {
+            > li {
+                display: inline-block;
+                float: none;
+                margin-bottom: $space-0;
+                > a {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.nav {
+    &.nav-tabs {
+        &.nav-stacked,
+        &.nav-stacked-right {
+            li {
+                font-weight: $font-weight-bold;
+                float: none;
+                margin: $space-0;
+                padding: $sidebar-list-item-padding;
+                border: $border-none;
+                border-left: $border-transparent-base;
+                a {
+                    line-height: $line-height-20;
+                    padding: $space-0;
+                    &:hover,
+                    &:focus {
+                        color: $text-color;
+                    }
+                }
+                &:hover,
+                &:focus {
+                    cursor: pointer;
+                    color: $text-color;
+                    border: $border-none;
+                    border-left: $border-transparent-base;
+                    background-color: $color-ash-gray;
+                }
+
+                &.active {
+                    color: $text-color;
+                    border: $border-none;
+                    border-left: $border-transparent-base;
+                    background-color: $color-ash-gray;
+                }
+            }
+        }
+    }
+}

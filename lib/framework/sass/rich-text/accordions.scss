@@ -1,0 +1,122 @@
+//
+// Rich Text - Accordions
+// --------------------------------------------------
+
+
+.article-body {
+    .accordion {
+        margin-bottom: $space-25;
+
+        transition: all 0.3s ease-in-out;
+    }
+
+    .accordion-item {
+        display: block;
+
+        transition: all 0.3s ease-in-out;
+
+        opacity: 1;
+        color: $color-carbonite-gray;
+        border-bottom: $border-flannel-gray-small;
+    }
+
+    .accordion-item-faq {
+        display: none;
+
+        height: 0;
+
+        opacity: 0;
+    }
+
+    .accordion-item-title {
+        font-size: $font-size-15;
+        font-weight: $font-weight-bold;
+
+        padding: $space-20 $space-20;
+
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &::before {
+            font-family: 'Air icons';
+
+            float: right;
+
+            content: '\e90e';
+            transition: all 0.3s ease-in-out;
+
+            color: $color-smoke-gray;
+        }
+    }
+
+    .accordion-item-title-active {
+        &::before {
+            transform: rotate(-180deg);
+        }
+    }
+
+    .accordion-item-content {
+        display: none;
+
+        padding: $space-20 $space-20 ;
+
+        p {
+            &:last-child {
+                margin-bottom: $space-0;
+            }
+        }
+    }
+
+    .accordion-primary {
+        .accordion-item-title-active {
+            transition: all 0.3s ease-in-out;
+
+            color: $white;
+            background-color: $brand-primary;
+
+            &::before {
+                color: $white;
+            }
+        }
+    }
+
+    .accordion-style-clean {
+        box-shadow: $drop-shadow-none;
+
+        .accordion-item-title {
+            font-size: $font-size-14;
+            font-weight: $font-weight-bold;
+
+            padding: $space-15 $space-0;
+
+            color: $brand-primary;
+        }
+    }
+
+    span {
+        &.load-more-faq {
+            font-size: $font-size-14;
+            font-weight: $font-weight-bold;
+
+            right: auto;
+            left: auto;
+
+            display: inherit;
+
+            width: 100%;
+            margin: auto;
+            padding: $space-0 $space-0 $space-20;
+
+            cursor: pointer;
+            text-align: center;
+
+            color: $brand-primary;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $brand-success;
+            }
+        }
+    }
+}

@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="search-page">
+        <section class="section-hero">
+            <img id="hero-banner" src="{{asset 'hero-bg-a30.svg'}}" alt=""/>
+            <div class="assets-hero">
+                <span class="hero-text section-title">Help Center</span>
+                <h1 class="heading-visitor">Find solutions <br/>fast.</h1>
+                <p class="hero-text sub-heading">Search hundreds of articles on Upwork Help</p>
+                <div class="search-box">
+                    {{search submit=true instant=true placeholder="Try 'video editing' or 'data entry'"}}
+                </div>
+                <div class="common-search-container">Popular
+                    <ul>
+                        <li>
+                            <a>Connects</a>
+                        </li>
+                        <li>
+                            <a>work diary</a>
+                        </li>
+                        <li>
+                            <a>get paid</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Generic SMF -->
+        <div id="section-smf" class="section-smf search-page-smf">
+            <div class="container">
+                <div class="row"></div>
+            </div>
+        </div>
+
+        <h3 class="box-heading"> Found {{t 'results' query=query count=results_count}} </h3>
+
+        <!-- Nav tabs. -->
+        <div id="search-topics-nav-tabs">
+            <div class="nav nav-tabs">
+                <div>
+                    <a id="search-tab-all" class="tab-link-all" href="#" data-tab="filter-all" aria-controls="all">
+                        All
+                    </a>
+                </div>
+                <div>
+                    <a id="search-tab-freelancer" class="tab-link-freelancer" href="#" data-tab="filter-fl" aria-controls="freelancer">
+                        Freelancer
+                    </a>
+                </div>
+                <div>
+                    <a id="search-tab-agency" class="tab-link-agency" href="#" data-tab="filter-ag" aria-controls="agency">
+                        Agency
+                    </a>
+                </div>
+                <div>
+                    <a id="search-tab-client" class="tab-link-client" href="#" data-tab="filter-cl" aria-controls="client">
+                        Client
+                    </a>
+                </div>
+                <div>
+                    <a id="search-tab-enterprise" class="tab-link-enterprise" href="#" data-tab="filter-en" aria-controls="enterprise">
+                        Enterprise Client
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-result-list">
+            {{#if article_results}}
+                <div class="article-list">
+                    {{#each article_results}}
+                        <div class="col-xs-12">
+                            <div class="article-list-item">
+                                <div class="title">{{title}}</div>                                
+                                <p class="excerpt">{{text}}</p>
+                                <a href="{{url}}">Continue reading</a>
+                            </div>
+                        </div>
+                    {{/each}}
+                    <div class="cleared"></div>
+                </div>
+                
+                <div class="search-pagination">
+                    {{pagination}}
+                    <div class="clearfix"></div>
+                </div>
+            {{else}}
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <p class="no-search-result">
+                            {{t 'no_results' query=query}}
+                            {{#link 'help_center'}}
+                                {{t 'browse_knowledge_base'}}
+                            {{/link}}
+                        </p>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

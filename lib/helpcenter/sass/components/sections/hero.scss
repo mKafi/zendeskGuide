@@ -1,0 +1,214 @@
+//
+// Components - Sections - Hero
+// --------------------------------------------------
+
+
+.section-hero {
+    padding: $hero-general-padding;
+    background-color: $hero-general-bg-color;   
+    margin-bottom: $hero-margin-bottom; 
+    position: relative;
+    border-radius: $hero-corner-radius;
+    .hero-text{
+        color: $hero-font-color;
+        font-size: $hero-general-font-size;
+        display: inline-block;
+        line-height: $hero-search-top-text-line-height;
+        font-weight: $font-weight-500;
+        width: $hero-search-top-text-width;
+        &.section-title{
+            margin-bottom: $hero-title-bottom-space;  
+            font-weight: $font-weight-500;          
+        }
+        &.sub-heading{
+            margin-bottom: $hero-sub-heading-font-size; 
+        }
+    }
+    .heading-visitor {
+        font-family: $font-family-rza;
+        margin: $hero-heading-margin; 
+        padding: $hero-heading-padding;
+        color: $hero-font-color;
+        line-height: 100%;
+        letter-spacing: -0.0196em;
+    }
+
+    .sub-head {
+        margin: $space-0;
+    }
+
+    .search-box {
+        position: relative;        
+        margin-bottom: $search-container-margin-bottom;
+        form {
+            position: relative;
+            display: inline-block;
+            input[type='search'] {
+                font-size: $hero-search-field-font-size;
+                position: relative;
+                width: $hero-search-width;
+                height: $hero-search-height;
+                transition: $regular-transition;
+                letter-spacing: $regular-letter-spacing;
+                color: $hero-search-color;
+                border-radius: $hero-search-border-radius;
+                line-height: $hero-search-line-height;
+                font-family: $hero-search-font-family;
+                font-weight: $hero-search-font-weight;
+                &:hover,
+                &:focus,
+                &:active {                    
+                    outline: none;
+                }
+            }
+
+            input[type='submit'],
+            button[type='submit'] {
+                cursor: pointer;
+                transition: $regular-transition;
+                line-height: $hero-search-btn-diamension;
+                display: inline-block;
+                width: $hero-search-btn-diamension;
+                height: $hero-search-btn-diamension;                
+                border: 1px solid transparent;
+                border-radius: $border-radius-for-round;
+                color: $white;
+                background: $hero-search-btn-bg;
+                position: absolute;
+                right: $hero-search-button-padding;
+                top: $hero-search-button-padding;                
+
+                > span{
+                    display: none;
+                }
+                &::after{
+                    display: inline-block;
+                    content: "";
+                    background-image: url(//theme.zdassets.com/theme_assets/9131565/73d8fb66c7033d429588c3eb73d1b6a7d839241f.svg);
+                    width: 24px;
+                    height: 24px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    vertical-align: middle;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    border: 1px solid transparent;
+                    background: $color-up-green;
+                }
+
+                .air-icon-search {
+                    margin-right: $space-0;
+                    margin-left: $space-0;
+                }
+            }
+
+            input[type='submit'] {
+                display: none;
+
+                color: $brand-primary;
+            }
+        }
+    }
+
+    .common-search-container {
+        font-size: $font-size-14;
+        display: inline-block;
+        color: #ffffff;
+        font-weight: $font-weight-500;
+        letter-spacing: $header-link-letter-spacing;
+        ul {
+            display: inline-block;
+            padding: $search-popular-tabs-cont-padding;
+            margin: $search-popular-tabs-cont-margin;
+            vertical-align: middle;
+            li {
+                display: inline-block;
+                margin: $search-popular-tabs-margin;                
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    padding: $search-popular-tab-link-padding;                    
+                    height: $search-popular-tab-link-height;
+                    background: $search-popular-tab-link-bg;
+                    border-radius: $search-popular-tab-link-border-radius;
+                    font-family: $search-popular-tab-link-font;
+                    font-style: normal;
+                    font-weight: $font-weight-500;
+                    font-size: $search-popular-tab-link-font-size;
+                    line-height: $search-popular-tab-link-line-height;
+                    text-align: center;
+                    letter-spacing: $header-link-letter-spacing;
+                    color: $search-popular-tab-link-color;
+                    transition: $regular-transition;
+                    text-decoration: none;
+                    &:hover, &:focus, &:active{
+                        background-color: $color-up-green;                        
+                        cursor: pointer;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    
+    #hero-banner {
+        position: absolute;
+        bottom: -5px;
+        right: 48px;
+        width: 39.3%;
+        height: auto;
+    }
+
+    @media (max-width: 991px) { 
+        .container {
+            height: 220px;
+            padding: $space-30 $space-0;
+        }
+        .assets-hero {
+            background-image: none;
+        }
+        .search-box {
+            margin-bottom: $space-0;
+            form {
+                width: 50%;
+                input[type='search'] {
+                    width: 100%;
+                }
+            }
+        }
+        .common-search-container {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin-top: $space-5 * (-1);
+        margin-bottom: $space-0;
+        h1 {
+            &.heading-visitor {
+                font-size: $font-size-28;
+
+                padding: $space-10 $space-0 $space-0;
+            }
+        }
+        .search-box {
+            form {
+                input[type='search'] {
+                    font-size: $font-size-14;
+                    line-height: $space-20 -2;
+                    display: inline-block;
+                    padding: $space-10 $space-70 $space-10 $space-10;
+                }
+                &::after {
+                    line-height: $space-40;
+                    width: $space-50;
+                    height: $space-40;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+//
+// Core - Tables
+// --------------------------------------------------
+
+
+.custom-table {
+    margin: $space-25 $space-15;
+    .table-head,
+    .table-row {
+        display: block;
+        width: 100%;
+    }
+
+    .table-head {
+        font-size: $font-size-14;
+        border-bottom: $border-flannel-gray-small;
+    }
+
+    .table-body {
+        margin-bottom: $space-20;
+    }
+
+    .table-row {
+        &:nth-child(2n+1) {
+            background-color: $white;
+        }
+
+        &:nth-child(2n) {
+            background-color: $color-ash-gray;
+        }
+
+        &.table-row-loader {
+            padding: $space-20;
+
+            border-bottom: $border-flannel-gray-small;
+        }
+
+        &.table-row-hide {
+            display: none;
+        }
+
+        &.table-no-record {
+            font-style: italic;
+
+            padding: $space-20;
+
+            text-align: center;
+
+            color: $text-color;
+        }
+    }
+
+    .table-cell {
+        font-size: $font-size-14;
+
+        display: inline-block;
+
+        padding: 8px 10px 10px;
+
+        vertical-align: top;
+    }
+
+    @media (max-width: 767px) {
+        .table-head {
+            display: none;
+        }
+
+        .table-row {
+            margin: $space-20 $space-0;
+            padding: $space-10;
+
+            border: $border-flannel-gray-small;
+            background-color: $white !important;
+
+            .table-cell {
+                width: 100% !important;
+                padding: $space-5 $space-0;
+
+                span {
+                    &.visible-xs-inline-block {
+                        margin-right: $space-10;
+                    }
+                }
+            }
+        }
+    }
+}

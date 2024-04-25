@@ -1,0 +1,185 @@
+.my-requests-page {
+    .nav-tabs-container {
+        &:after{            
+            content: '';
+            display: block;
+            width: $my-req-nav-cont-width;
+            border-bottom: $my-req-nav-cont-border;
+            position: relative;
+            top: $my-req-nav-cont-top;
+            z-index: 0;
+        }        
+        ul{
+            padding: $my-req-nav-nav-padding;
+            margin: $my-req-nav-nav-margin;
+            font-size: $my-req-nav-nav-font-size;
+            li{                
+                margin: $my-req-nav-nav-li-margin;
+                &.active{
+                    color: $up-black;  
+                    &::after{
+                        display: flex;
+                        content: '';
+                        border-right: $my-req-nav-nav-active-after-border-right;
+                        background-color: $my-req-nav-nav-active-after-bg-color;
+                        height: $my-req-nav-nav-active-after-height;
+                        position: absolute;
+                        bottom: $my-req-nav-nav-active-after-bottom;
+                        width: $my-req-nav-nav-active-after-width;
+                        border-radius: $my-req-nav-nav-active-after-border-radius;
+                        z-index: $my-req-nav-nav-active-after-z-index;
+                    }
+                }                             
+                a{
+                    height: $my-req-nav-nav-item-height;
+                    line-height: $my-req-nav-nav-item-line-height;
+                    font-family: $my-req-nav-nav-item-font;
+                    font-style: normal;
+                    font-weight: $font-weight-500;
+                    font-size: $my-req-nav-nav-item-font-size;
+                    color: $my-req-nav-nav-item-color;
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                    padding: $my-req-nav-nav-item-padding; 
+                }
+            }
+        }        
+    }
+
+    #my-activities-table {
+        margin: $my-req-margin;
+    }
+
+    @media (max-width: 767px) {
+        .nav-tabs-container {
+            margin-top: $space-15;
+            margin-left: $space-15 * -1;
+        }
+    }
+
+    .input-group-sm {
+        margin-left: -1 * $space-15;
+    }
+
+    .requests-table-toolbar {
+        margin: $my-req-table-toolbar-margin;
+        position: relative;
+        &::before{
+            display: inline-block;
+            content: '';
+            width: $my-req-table-toolbar-before-width;
+            height: $my-req-table-toolbar-before-height;
+            background-image: url(https://theme.zdassets.com/theme_assets/9131565/abb53d9f5bd53ee5f6041837ea068d0d35895db8.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: $my-req-table-toolbar-before-bg-size;
+            position: absolute;
+            z-index: $my-req-table-toolbar-before-z-index;
+            top: $my-req-table-toolbar-before-top;
+            left: $my-req-table-toolbar-before-left;
+        }
+        #request-query-text {
+            display: inline-block;
+            padding: $my-req-text-padding;
+            border: $my-req-text-border;
+            border-radius: $my-req-text-border-radius;
+            width: $my-req-text-width;
+        }
+        #request-status-dropdown {
+            float: right;
+            vertical-align: top;
+            width: $my-req-status-width;
+            position: relative;
+            
+            > button {
+                width: $my-req-status-button-width;
+            }
+
+            > .dropdown-menu {
+                width: $my-req-status-dropdown-width;
+                position: absolute;
+                left: $my-req-status-dropdown-left;
+                top: inherit;
+            }
+        }
+
+        .input-group {
+            .input-group-addon {
+                border-radius: $border-radius-sm-right;
+                &:hover,
+                &:focus,
+                &:active {
+                    transition: all 0.15s ease-in-out;
+                    background-color: $brand-success;
+                }
+            }
+        }
+
+        .request-status-filter {
+            float: right;
+            @media (max-width: 767px) {
+                float: left;
+                margin-bottom: $space-0;
+            }
+        }
+    }
+
+    .requests-search-info {
+        font-style: italic;
+        margin: $space-0 $space-25;
+        color: $color-granite-gray;
+    }
+
+    .my-activities-table {          
+        .table-cell{
+            padding: $my-req-activities-table-padding;
+        }              
+        .table-cell-id, .table-cell-subject, .table-cell-created, .table-cell-updated, .table-cell-status{ 
+            font-family: $my-req-activities-table-font;
+            font-style: normal;
+            font-weight: $font-weight-500;
+            font-size: $my-req-activities-table-font-size;
+            line-height: $my-req-activities-table-line-height;
+            letter-spacing: $my-req-activities-table-letter-spacing;
+            padding: $my-req-activities-table-padding;
+        }
+        .table-head {
+            border-bottom: $my-req-activities-table-head-border-bottom;
+            .table-cell-id, .table-cell-subject, .table-cell-created, .table-cell-updated, .table-cell-status{
+                color: $up-black;  
+                a{
+                    color: $up-black;  
+                }              
+            }
+        }
+        .table-body{
+            .table-row{
+                background-color: unset !important;
+                border-bottom: 1px solid $gray-05;
+                .table-cell-id, .table-cell-subject, .table-cell-created, .table-cell-updated{
+                    color: $gray-01;
+                    a{
+                        color: $up-black;
+                    }
+                }   
+            }
+                 
+        }
+        .table-cell-id {
+            width: 14%;
+        }   
+        .table-cell-subject {
+            width: 40%;
+        }    
+        .table-cell-created {
+            width: 17%;
+        }    
+        .table-cell-updated {
+            width: 17%;
+        }    
+        .table-cell-status {
+            width: 10%;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+main {
+    > .container {
+        .category-page{
+            .row {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
+    }
+}
+
+.category-page, .section-page{   
+    padding-top: $category-section-page-padding-top; 
+    .category-block{
+        margin-bottom: $category-block-margin-top;
+        .category-title{
+            a, h3{
+                font-family: $category-title-font;
+                font-style: normal;
+                font-weight: $font-weight-500;
+                font-size: $category-title-font-size;
+                line-height: $category-title-line-height;
+                align-items: center;
+                letter-spacing: $category-title-letter-spacing;
+                color: $category-title-font-color;
+                display: block;
+                margin: $category-title-margin;
+                
+            }
+        }
+        .article-list{
+            column-count: $category-article-list-columns;            
+            &.section-page{
+                column-count: $section-article-list-column;
+            }
+            .article-list-item{            
+                display: block;            
+                a{
+                    font-family: $category-article-list-font;
+                    font-style: normal;
+                    font-weight: $font-weight-500;
+                    font-size: $category-article-list-font-size;
+                    line-height: $category-article-list-line-height;
+                    display: flex;
+                    align-items: center;
+                    letter-spacing: $category-article-list-letter-spacing;
+                    color: $category-article-list-font-color;
+                    margin-bottom: $category-article-list-margin-bottom;
+                    text-decoration: underline;
+                }
+            }
+            @media (max-width: 767px) {
+                column-count: 1;
+            }     
+        }
+    }
+}
+@media (min-width: 1200px){
+        
+}
+@media (max-width: 1199px){
+    main > {
+        .container{
+            .category-page{
+                .row{
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px){
+    
+}
+@media (min-width: 768px){
+    
+}
+@media (max-width: 767px){
+    .container{    
+        .left-side-container{
+            width: 100%;
+            padding: 0;
+        }
+        .right-side-container{
+            display: none;
+        }
+    }
+}
+@media (max-width: 600px){
+    
+}

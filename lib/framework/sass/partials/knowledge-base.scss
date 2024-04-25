@@ -1,0 +1,86 @@
+//
+// Partials - Knowledge Base
+// --------------------------------------------------
+
+
+.category-empty {
+    font-style: italic;
+
+    margin: $space-40 $space-0;
+    padding: $space-30;
+
+    background-color: $brand-warning;
+}
+
+.section-empty {
+    font-style: italic;
+
+    margin: $space-0;
+    padding: $space-30;
+
+    background-color: $brand-warning;
+}
+
+.category-tree-container {
+    min-height: 320px;
+    padding: $space-0 $space-30;
+
+    .category-tree {
+        padding: $space-20 $space-0 $space-15;
+
+        &:not(:first-child) {
+            border: $border-none;
+            border-top: $border-flannel-gray-small;
+        }
+
+        h4 {
+            margin: $space-0;
+            padding: $space-0 $space-0 $space-10;
+
+            a {
+                font-weight: $font-weight-normal;
+
+                color: $color-carbonite-gray;
+            }
+        }
+
+        .article-list {
+            column-count: 2;
+
+            .article-list-item {
+                font-size: $font-size-14;
+
+                a {
+                    font-weight: $font-weight-normal;
+                }
+            }
+
+            @media (max-width: 991px) {
+                column-count: 2;
+            }
+
+            @media (max-width: 767px) {
+                column-count: 1;
+            }
+        }
+    }
+}
+
+.section-tree {
+    min-height: 320px;
+    padding: $space-0 $space-30;
+
+    .article-list {
+        margin: $space-0;
+
+        .article-list-item {
+            margin: $space-0;
+
+            .excerpt {
+                margin-bottom: $space-0;
+
+                color: $color-smoke-gray;
+            }
+        }
+    }
+}

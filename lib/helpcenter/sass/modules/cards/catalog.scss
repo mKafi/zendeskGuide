@@ -1,0 +1,40 @@
+//
+// Modules - CTA - Catalog
+// --------------------------------------------------
+
+
+.section-cta-catalog {
+    background-color: $white;
+
+    .cta-card-catalog {
+        padding: $space-20 $space-20 $space-20 $space-50;
+
+        .cta-card-image-catalog {
+            background-image: url($aws-base-path + '/cta/catalog.svg');
+        }
+
+        .heading-visitor {
+            display: inline-block;
+            margin: $space-20 $space-0;
+            vertical-align: middle;
+        }
+
+        .btn {
+            float: right;
+            margin: $space-30 $space-30 $space-0 $space-0;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .cta-card-catalog {
+            padding: $space-30;
+
+            .btn {
+                display: block;
+                float: none;
+
+                margin: $space-0 auto;
+            }
+        }
+    }
+}

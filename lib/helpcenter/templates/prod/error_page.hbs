@@ -1,0 +1,127 @@
+<div class="container">
+    <div class="error-page">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                {{#is error 'unauthorized'}}
+                    <div class="icon-svg-alien"></div>
+
+                    <div class="page-title">
+                        <div class="error-heading">Oh! It looks like that page has moved.</div>
+                        <h4 class="sub-heading">                            
+                            Shall we try again? There are hundrades of helpful articles available or start from {{#link 'help_center'}}home page{{/link}}.
+                        </h4>
+                        <div class="search-box">
+                            {{search submit=true instant=true placeholder='Search for anything'}}
+                        </div>                        
+                    </div>
+                    <script type="text/javascript">
+                        /* Set page location to SUIT2. */
+                        window.__SUIT_CONFIG__ = {
+                            pageLocation: 'support:error:401'
+                        }
+                    </script>
+                {{/is}}
+                {{#is error 'forbidden'}}
+                    <div class="icon-svg-alien"></div>
+
+                    <div class="page-title">
+                        <h1 class="heading-visitor">Oh! It looks like that page has moved.</h1>
+                        <h4 class="sub-heading">
+                            Shall we try again? There are hundreds of helpful articles available or start from {{#link 'help_center'}}home page{{/link}}.
+                        </h4>
+                        <div class="search-box">
+                            {{search submit=true instant=true placeholder='Search for anything'}}
+                        </div>                        
+                    </div>
+                    <script type="text/javascript">
+                        /* Set page location to SUIT2. */
+                        window.__SUIT_CONFIG__ = {
+                            pageLocation: 'support:error:403'
+                        }
+                    </script>
+                {{/is}}
+                {{#is error 'not_found'}}
+                    <div class="icon-svg-alien"></div>
+
+                    <div class="page-title">
+                        <div class="error-heading">Oh! It looks like that page has moved.</div>
+                        <h4 class="sub-heading">
+                            Shall we try again? There are hundreds of helpful articles available or start from {{#link 'help_center'}}home page{{/link}}.
+                        </h4>
+                        <div class="search-box">
+                            {{search submit=true instant=true placeholder='Search for anything'}}
+                        </div>                        
+                    </div>
+                    <script type="text/javascript">
+                        /* Set page location to SUIT2. */
+                        window.__SUIT_CONFIG__ = {
+                            pageLocation: 'support:error:404'
+                        }
+                    </script>
+                {{/is}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" async>
+jQuery(function () {
+    let url = getUrlPartsArray()
+    if (url[3] == 'articles') {
+        let articleURL = url[4].split('-')
+        let articleID = articleURL[0]
+        for (i in kbRedirects.articles) {
+            if (articleID == kbRedirects.articles[i].source) {
+                if (kbRedirects.articles[i].destination == '') {
+                    window.location.href = zdBrands.main.hc.url
+                } else {
+                    let path = kbRedirects.articles[i].destination.split('/')
+                    if (path.length > 1) {
+                        window.location.href = zdBrands.main.hc.url + '/' + kbRedirects.articles[i].destination
+                    } else {
+                        window.location.href = zdBrands.main.hc.url + '/articles/' + kbRedirects.articles[i].destination
+                    }
+                }
+            }
+        }
+    } else if (url[3] == 'sections') {
+        let sectionURL = url[4].split('-')
+        let sectionID = sectionURL[0]
+        for (i in kbRedirects.sections) {
+            if (sectionID == kbRedirects.sections[i].source) {
+                if (kbRedirects.sections[i].destination == '') {
+                    window.location.href = zdBrands.main.hc.url
+                } else {
+                    let path = kbRedirects.sections[i].destination.split('/')
+                    if (path.length > 1) {
+                        window.location.href = zdBrands.main.hc.url + '/' + kbRedirects.sections[i].destination
+                    } else {
+                        window.location.href = zdBrands.main.hc.url + '/sections/' + kbRedirects.sections[i].destination
+                    }
+                }
+            }
+        }
+    } else if (url[3] == 'categories') {
+        let categoryURL = url[4].split('-')
+        let categoryID = categoryURL[0]
+        for (i in kbRedirects.categories) {
+            if (categoryID == kbRedirects.categories[i].source) {
+                if (kbRedirects.categories[i].destination == '') {
+                    window.location.href = zdBrands.main.hc.url
+                } else {
+                    let path = kbRedirects.categories[i].destination.split('/')
+                    if (path.length > 1) {
+                        window.location.href = zdBrands.main.hc.url + '/' + kbRedirects.categories[i].destination
+                    } else {
+                        window.location.href = zdBrands.main.hc.url + '/categories/' + kbRedirects.categories[i].destination
+                    }
+                }
+            }
+        }
+    }
+
+    /* Replace search button. */
+    $('.search-box input[type="submit"]').replaceWith('<button name="commit" type="submit" value="Search" aria-label="Search"><span class="air-icon-search"></span></button>')
+})
+</script>

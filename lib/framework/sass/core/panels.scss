@@ -1,0 +1,18 @@
+//
+// Core - Panels
+// --------------------------------------------------
+
+
+.panel {
+    margin: $space-40 $space-0;
+
+    .panel-heading {
+        padding: $space-15 $space-30;
+
+        background-color: $white;
+
+        .panel-title {
+            font-size: $font-size-22;
+        }
+    }
+}

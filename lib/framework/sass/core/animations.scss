@@ -1,0 +1,43 @@
+//
+// Core - Animations
+// --------------------------------------------------
+
+
+@keyframes scale-x {
+    0%,
+    10% {
+        transform: scaleX(0);
+    }
+
+    20%,
+    80% {
+        transform: scaleX(1);
+    }
+
+    90%,
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
+    }
+}

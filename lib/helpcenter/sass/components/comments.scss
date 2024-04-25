@@ -1,0 +1,222 @@
+//
+// Components - Comments
+// --------------------------------------------------
+
+
+.comments-container {
+    padding: $space-30 $space-0 $space-0;
+
+    > .comments {
+        &:first-child {
+            padding-top: $space-0;
+        }
+    }
+}
+
+.comment-author {
+    display: inline-block;
+
+    margin-right: $space-10;
+
+    vertical-align: top;
+
+    .avatar-user {
+        display: inline-block;
+
+        width: $space-40;
+        height: $space-40;
+        margin-right: $space-10;
+
+        vertical-align: top;
+    }
+
+    .comment-meta {
+        display: inline-block;
+
+        vertical-align: top;
+
+        .comment-author-name {
+            color: $brand-primary;
+        }
+    }
+
+    .comment-actions {
+        display: inline-block;
+
+        width: $space-15;
+        height: $space-15;
+        margin: $space-0 $space-0 $space-0 $space-10;
+        padding: $space-0;
+
+        vertical-align: top;
+
+        .dropdown-toggle {
+            font-family: 'Air Icon';
+            font-style: normal;
+            font-variant: normal;
+
+            position: relative;
+
+            display: inline-block;
+
+            width: $space-15;
+            height: $space-15;
+            margin: $space-0;
+            padding: $space-0;
+
+            text-transform: none;
+
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+            &::after {
+                font-family: 'Air Icons';
+
+                position: absolute;
+                top: $space-5 * (-1);
+
+                content: '\e9cf';
+
+                color: $brand-primary;
+            }
+        }
+    }
+}
+
+.comments {
+    padding: $space-30 $space-0  $space-20;
+
+    border-bottom: $border-flannel-gray-small;
+
+    .comment-body {
+        overflow: hidden;
+
+        margin: $space-10 $space-0 $space-0;
+        .zd-comment {
+            margin: $space-10 $space-0;
+            img {
+                max-width: 100% !important;
+                height: auto;
+            }
+            a {
+                display: inline-block;
+                overflow: hidden;
+
+                width: auto;
+                max-width: 100%;
+
+                vertical-align: middle;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .zendesk_quoted {
+            blockquote {
+                margin: $space-0 $space-0 $space-10 !important;
+            }
+        }
+    }
+
+    .attachment-list {
+        li {
+            a {
+                display: inline-block;
+                overflow: hidden;
+
+                margin-right: $space-15;
+
+                vertical-align: top;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+
+                span[class*='air-icon-'] {
+                    margin-right: $space-5;
+                    margin-left: $space-0;
+                }
+            }
+
+            .meta {
+                display: inline-block;
+
+                vertical-align: top;
+            }
+        }
+    }
+}
+
+.comment-form {
+    padding: $space-40 $space-0;
+
+    .comment-author {
+        margin-right: $space-0;
+    }
+
+    .comment-container {
+        display: inline-block;
+
+        width: 90%;
+
+        vertical-align: top;
+
+        #hc-wysiwyg {
+            border-radius: $border-radius-default;
+        }
+
+        .upload-pool {
+            .upload-item {
+                width: 100%;
+
+                .upload-link {
+                    &::before {
+                        font-family: 'Air icons';
+
+                        content: '\e915';
+
+                        color: $brand-primary;
+                    }
+                }
+
+                .upload-progress {
+                    background-color: $brand-primary;
+                }
+
+                .upload-remove {
+                    &::before {
+                        color: $color-smoke-gray;
+                    }
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        &::before {
+                            color: $color-up-lime;
+                        }
+                    }
+                }
+            }
+        }
+
+        .comment-form-controls {
+            margin: $space-20 $space-0 $space-0;
+
+            .mark-solved-control {
+                margin-bottom: $space-20;
+
+                input {
+                    position: relative;
+                    top: $space-1 * 2;
+                }
+
+                label {
+                    font-size: $font-size-14;
+
+                    margin: $space-0;
+                }
+            }
+        }
+
+        @media (max-width: 767px) {
+            width: 83%;
+        }
+    }
+}

@@ -1,0 +1,186 @@
+<div class="container">
+    <div class="category-page">
+        <div class="row">            
+            <div class="breadcrumbs-mobile">                
+                {{breadcrumbs}}
+                <div class="main-page-title">{{category.name}}</div>
+            </div>
+
+            <div class="breadcrumbs-desktop">
+                {{breadcrumbs}}
+                <div class="main-page-title">{{category.name}}</div>
+            </div>            
+
+            <!-- Generic SMF -->
+            <div id="section-smf" class="section-smf category-page-smf">
+                <div class="container">
+                    <div class="row"></div>
+                </div>
+            </div>
+            
+            
+            <div class="body-content-wrapper row">
+                <div class="left-side-container col-md-8 col-xs-12">
+                    {{#each sections}}
+                        <div class="category-block">
+                            <div class="category-title"><a href="{{url}}">{{name}}</a></div>                    
+                            {{#if articles}}                        
+                                <div id="article-list-{{id}}" class="article-list" data-section="{{id}}">
+                                    {{#each articles}}
+                                        <div class="article-list-item">
+                                            <a href="{{url}}">{{title}}</a>
+                                        </div>
+                                    {{/each}}
+                                </div>                        
+                                {{#if more_articles}}
+                                    <script type="text/javascript">addMoreArticles({{id}})</script>
+                                {{/if}}
+                            {{else}}                        
+                                <div class="article-list">
+                                    <p>{{t 'empty'}}</p>
+                                </div>                        
+                            {{/if}}
+                            <div class="clearfix"></div>
+                        </div>    
+                    {{else}}
+                        <div class="category-block"><p>{{t 'empty'}}</p></div>
+                    {{/each}}
+                </div>
+                <div class="right-side-container col-md-4">
+                    <div class="right-side-widget-cont"></div>
+                </div>                
+            </div>
+        </div>
+
+        {{#unless signed_in}}
+            <section id="contact-ask" class="section section-contact-ask">
+                <div class="row">
+                    <div class="col-md-6">
+                        <section class="section profile-ad">
+                            <div class="profile-container">                
+                                <span>Log in for personalized service and assistance.</span>
+                                <h3>Contact Us</h3>
+                                <a href="https://support.upwork.com/hc/en-us/signin?return_to=https://support.upwork.com/hc/en-us" class="banner-button">Log In</a>
+                                <img id="img-cta-contact" src="" alt=""/>                
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-md-6">
+                        <section class="section profile-ad">
+                            <div class="profile-container"> 
+                                <span>The Upwork Community team is here to help.</span>               
+                                <h3>Ask Everyone</h3>
+                                <a href="https://community.upwork.com" class="banner-button">Ask</a>
+                                <img id="img-cta-ask" src="" alt=""/>                
+                            </div>
+                        </section> 
+                    </div>
+                </div>
+            </section>
+
+            <section class="section profile-ad">
+                <div class="profile-container">                
+                    <h3>Log in to get personalized help.</h3>
+                    <a href="#" class="banner-button link-log-in">Log In</a>
+                    <a class="btn btn-link" href="https://www.upwork.com/ab/account-security/reset-password">Forgot my password</a>
+                    <img id="img-cta-personalized help" src="" alt=""/>                
+                </div>
+            </section>
+        {{/unless}}
+    </div>    
+</div>
+
+<script type="text/javascript" async>  
+    jQuery(function () {
+        var categoryID = {{category.id}}
+        for (i in kbRedirects.categories) {
+            if (categoryID == kbRedirects.categories[i].source) {
+                if (kbRedirects.categories[i].destination == '') {
+                    window.location.href = zdBrands.main.hc.url
+                } else {
+                    let path = kbRedirects.categories[i].destination.split('/')
+                    if (path.length > 1) {
+                        window.location.href = zdBrands.main.hc.url + '/' + kbRedirects.categories[i].destination
+                    } else {
+                        window.location.href = zdBrands.main.hc.url + '/categories/' + kbRedirects.categories[i].destination
+                    }
+                }
+            }
+        }
+        for (i in kbMirrors.categories) {
+            if (categoryID == kbMirrors.categories[i].mirror) {
+                for (j in kbMirrors.categories[i].items) {
+                    if ($('.category-tree-container .category-empty').length > 0) {
+                        $('.category-tree-container .category-empty').parents().eq(1).remove()
+                    }
+                    addMirroredSections(kbMirrors.categories[i].items[j].id, kbMirrors.categories[i].items[j].title)
+                    addMoreArticles(kbMirrors.categories[i].items[j].id)
+                }
+            }
+        }        
+    })
+
+    /* Helper functions A */ 
+    /* Getting categories from user scope according to js file. (Hardcoded categories list) */     
+    function getCategoriesByScope(userScope){
+        let kbData = []
+        let categoryID = {{category.id}}
+        if(userScope){                
+            for (i in kbMatrics) {
+                if (kbMatrics[i].scope == userScope){
+                    for (j in kbMatrics[i].tiles) {
+                        kbData.push({
+                            'link':zdBrands.main.hc.url + '/' + kbMatrics[i].tiles[j].type + '/' + kbMatrics[i].tiles[j].id,
+                            'label': kbMatrics[i].tiles[j].title,
+                            'class':(categoryID == kbMatrics[i].tiles[j].id) ? 'active right-side-widget-link' : 'right-side-widget-link',
+                            'id':'categoryid-'+kbMatrics[i].tiles[j].id
+                        }) 
+                    }                    
+                }
+            }
+        }
+        return kbData;
+    }     
+    /* Helper functions Z */ 
+    
+    /* jQuery ready function */ 
+    $(document).ready(function(){  
+        /* setting left sidebar and right sidebar height same */
+        setTimeout(function(){
+            if($(".left-side-container").length > 0 && $(".right-side-container").length > 0){
+                let leftContHeight = $(".left-side-container").height();                
+                $(".right-side-container").css({"height":leftContHeight+'px'})
+            }
+        },1500)
+        
+        
+        /* finding sidebar items and linking */ 
+        let data = []
+        data = getCategoriesByScope(getCookie("upwork-help-user-tab"));
+
+        /* Preparing params for rightSideBar. A common format to generate sidebar. */ 
+        let params = {
+            'title':'', // Bar heading title
+            'parent':'.right-side-widget-cont', // Parent container. Which will contain generated list. We can use # for parent css ID
+            'weight':'0', /* Weight value for order by js or css */ 
+            'data' : data /* Data array to pupulate the menu */ 
+        }
+        
+        /* calling sidebar generating function from rightSideBarWidget.js file. Generic function */
+        generateRightSideWeidget(params);
+
+        /* Setting fixed or relative position on generated rightsidebar on page scrolling */ 
+        $(document).scroll(function(){
+            let params = {
+                'parent':'.right-side-container',        
+                'afterElement':'.navbar.navbar-default',
+                'element':'.right-side-widget-cont',
+                'adjustTop': 0,
+                'leftContainer':'.left-side-container',
+                'adjustBottom' : -80 
+            }
+            fixRightSideBar(params)
+        });
+    });
+</script>

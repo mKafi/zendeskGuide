@@ -1,0 +1,41 @@
+//
+// Rich Text - Tables
+// --------------------------------------------------
+
+
+.article-body {
+    table {
+        margin: $space-0 $space-0 $space-25;
+
+        thead {
+            tr {
+                th {
+                    font-size: $font-size-14;
+
+                    color: $color-carbonite-gray;
+                    border-bottom: $space-1 solid $color-oyster-gray;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    color: $color-carbonite-gray;
+                }
+            }
+        }
+
+        &.table-color-header {
+            thead {
+                tr {
+                    th {
+                        color: $white;
+                        border-bottom: $border-primary-small;
+                        background-color: $brand-primary;
+                    }
+                }
+            }
+        }
+    }
+}

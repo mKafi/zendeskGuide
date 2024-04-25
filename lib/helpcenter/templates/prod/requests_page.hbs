@@ -1,0 +1,127 @@
+<div class="container">
+    <div class="my-requests-page">
+        <div class="row">
+            <div class="breadcrumbs-mobile">                
+                {{breadcrumbs}}
+            </div>
+
+            <div class="breadcrumbs-desktop">
+                {{breadcrumbs}}
+                <div class="main-page-title">{{t 'my_requests'}}</div>
+            </div>            
+
+            <!-- Generic SMF -->
+            <div id="section-smf" class="section-smf my-requests-page">
+                <div class="container">
+                    <div class="row"></div>
+                </div>
+            </div>
+
+
+            <div class="my-requests-cont">
+                <nav class="my-activities-sub-menu nav-tabs-container">
+                    <ul class="nav nav-tabs">
+                        {{#each filters}}
+                            <li class="{{#if selected}} active {{/if}}">
+                            <a href="{{url}}">{{name}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </nav>
+
+
+                {{#form 'requests_filter' class='requests-table-toolbar form-inline'}}                    
+                    <input id="request-query-text" class="form-control" name="query" type="search" placeholder="Search requests" aria-required="false" aria-describedby="search-addon">                    
+                    <div id="request-status-dropdown" class="dropdown form-control">                    
+                        <button class="btn btn-default btn-sm" type="button" data-toggle="dropdown">Any Status</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:customSelectHandler('request-status', '', 'Any');" data-value="">Any</a></li>
+                            <li><a href="javascript:customSelectHandler('request-status', 'open', 'Open');" data-value="open">Open</a></li>
+                            <li><a href="javascript:customSelectHandler('request-status', 'answered', 'Awaiting');" data-value="answered">Awaiting</a></li>
+                            <li><a href="javascript:customSelectHandler('request-status', 'solved', 'Solved');" data-value="solved">Solved</a></li>
+                        </ul>
+                        <input id="request-status-hidden" name="status" type="hidden">
+                    </div>
+                {{/form}}
+
+                {{#if query}}                    
+                    <div class="requests-search-info">
+                        {{t 'requests_search_results_info' count=requests.length query=query}}
+                    </div>                    
+                {{/if}}
+
+
+
+
+                <div id="my-activities-table" class="custom-table my-activities-table">
+                    {{#if requests}}
+                        <div class="table-head {{current_filter.identifier}}-requests">
+                            <div class="table-cell table-cell-id">
+                                {{t 'id'}}
+                            </div>
+                            <div class="table-cell table-cell-subject">
+                                {{t 'subject'}}
+                            </div>
+                            <div class="table-cell table-cell-created">
+                                {{#is current_filter.identifier 'my'}}
+                                    {{#link 'requests' sort_by='created_at'}}{{t 'created'}}{{/link}}
+                                {{else}}
+                                    {{t 'requester'}}
+                                {{/is}}
+                            </div>
+                            <div class="table-cell table-cell-updated">
+                                {{#link 'requests' sort_by='updated_at'}}{{t 'last_activity'}}{{/link}}
+                            </div>
+                            <div class="table-cell table-cell-status">
+                                {{t 'status'}}
+                            </div>
+                        </div>
+                        <div class="table-body">
+                            {{#each requests}}
+                                <div class="table-row">
+                                    <div class="table-cell table-cell-id">
+                                        <span class="visible-xs-inline-block">{{t 'id'}}#</span>{{id}}
+                                    </div>
+                                    <div class="table-cell table-cell-subject">
+                                        <a href="{{url}}">
+                                            {{#if subject}}
+                                                {{subject}}
+                                            {{else}}
+                                                {{excerpt description characters=50}}
+                                            {{/if}}
+                                        </a>
+                                    </div>
+                                    <div class="table-cell table-cell-created">
+                                        {{#is ../current_filter.identifier 'my'}}
+                                            <span class="visible-xs-inline-block">{{t 'created'}}:</span>{{date created_at timeago=true}}
+                                        {{else}}
+                                            {{requester.name}}
+                                        {{/is}}
+                                    </div>
+                                    <div class="table-cell table-cell-updated">
+                                        <span class="visible-xs-inline-block">{{t 'last_activity'}}:</span>{{date updated_at timeago=true}}
+                                    </div>
+                                    <div class="table-cell table-cell-status">
+                                        <span class="request-status label request-status-{{status}}" title="{{status_description}}">
+                                            {{status_name}}
+                                        </span>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>
+                        <div class="row text-right">
+                            {{pagination}}
+                        </div>
+                    {{else}}
+                        <p class="no-record">{{t 'no_requests'}}</p>
+                    {{/if}}
+                </div>
+                
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>

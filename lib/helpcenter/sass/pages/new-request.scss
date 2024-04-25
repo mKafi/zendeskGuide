@@ -1,0 +1,29 @@
+//
+// Page - New Request
+// --------------------------------------------------
+
+
+.new-request-page {
+    .header-hint {
+        margin: $space-0;
+    }
+
+    .footer-hint {
+        margin: $space-20 $space-0;
+    }
+
+    footer {
+        margin-top: $space-20;
+    }
+}
+
+#new_request {
+    input[type='text'] {
+        width: 100%;
+    }
+
+    textarea {
+        width: 100%;
+        height: 100px;
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "helpcenter" : {
+        "name" : "HCTheme",
+        "theme" : "HCTheme.zip",
+        "styles" : [
+            {
+                "name" : "styles"
+            }
+        ],
+        "scripts" : [
+            {
+                "name" : "scripts",
+                "dependencies" : [
+
+                    "/js/pages/kbs.js",
+                    "/js/pages/home.js",
+                    "/js/pages/search.js",
+                    "/js/pages/categories.js",
+                    "/js/pages/sections.js",
+                    "/js/pages/articles.js",
+                    "/js/pages/requestsList.js",
+                    "/js/pages/requestSingle.js",
+
+                    "/js/components/smfs/status.js",
+                    "/js/components/smfs/suspendedUsers.js",
+
+                    "/js/components/forms/gsso.js",
+                    "/js/components/forms/byoc.js",
+                    "/js/components/forms/anyHire.js",
+                    "/js/components/forms/feedback.js",
+                    "/js/components/forms/selfauth.js",
+                    "/js/components/forms/bugReport.js",
+                    "/js/components/forms/appealForm.js",
+                    "/js/components/forms/enterprise.js",
+                    "/js/components/forms/newRequest.js",
+                    "/js/components/forms/circumvention.js",
+                    "/js/components/forms/directContract.js",
+                    "/js/components/forms/feedbackRemoval.js",
+                    "/js/components/forms/videoVoiceAssistance.js",
+                    "/js/components/forms/rewardConsistentEarners.js",
+                    "/js/components/forms/proprietaryRightsInfringementReporting.js",
+
+                    "/js/components/catalog.js",
+                    "/js/components/richText.js",
+                    "/js/components/sideConvo.js",
+                    "/js/components/directLink.js",
+                    "/js/components/supportBot.js",
+                    "/js/components/requestForm.js",
+                    "/js/components/statusWidget.js",
+                    "/js/components/articleWidget.js",
+                    "/js/components/directLink.js",
+                    "/js/components/rightSideBarWidget.js",
+                    "/js/components/enterpriseLandingPage.js",
+                    "/js/components/nonEnterpriseLandingPage.js",
+
+                    "/js/auth.js",
+                    "/js/oauth.js",
+                    "/js/throttle.js",
+                    "/js/templates.js"
+                ]
+            }
+        ]
+    }
+}

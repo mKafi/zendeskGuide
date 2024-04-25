@@ -1,0 +1,137 @@
+<div class="container">
+    <div class="row">
+        <section class="section-hero">
+            <img id="hero-banner" src="{{asset 'hero-bg-a30.svg'}}" alt=""/>
+            <div class="assets-hero">
+                <span class="hero-text section-title">Help Center</span>
+                <h1 class="heading-visitor">Find solutions <br/>fast.</h1>
+                <p class="hero-text sub-heading">Search hundreds of articles on Upwork Help</p>
+                <div class="search-box">
+                    {{search submit=true instant=true placeholder="Try 'video editing' or 'data entry'"}}
+                </div>
+                <div class="common-search-container">Popular
+                    <ul>
+                        <li>
+                            <a>Connects</a>
+                        </li>
+                        <li>
+                            <a>work diary</a>
+                        </li>
+                        <li>
+                            <a>get paid</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Generic SMF -->
+        <div id="section-smf" class="section-smf home-page">
+            <div class="container"><div class="row"></div></div>
+        </div>
+
+        <section id="navigation-cont" class="section-popular-topics">
+            <!-- Nav tabs. -->
+            <div id="popular-topics-nav-tabs" class="popular-topics-nav-tabs">
+                <h2 class="heading-visitor">Choose an account type for personalized service</h2>
+                <div class="nav-tabs-container">
+                    <div class="nav nav-tabs" role="tablist">
+                        <div role="presentation">
+                            <a class="tab-link-freelancer" href="#tab-pane-freelancer" aria-controls="tab-pane-freelancer" role="tab" data-toggle="tab">
+                                Freelancer
+                            </a>
+                        </div>
+                        <div role="presentation">
+                            <a class="tab-link-agency" href="#tab-pane-agency" aria-controls="tab-pane-agency" role="tab" data-toggle="tab">
+                                Agency
+                            </a>
+                        </div>
+                        <div role="presentation">
+                            <a class="tab-link-client" href="#tab-pane-client" aria-controls="tab-pane-client" role="tab" data-toggle="tab">
+                                Client
+                            </a>
+                        </div>
+                        <div role="presentation">
+                            <a class="tab-link-enterprise" href="#tab-pane-enterprise" aria-controls="tab-pane-enterprise" role="tab" data-toggle="tab">
+                                Enterprise Client
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help categories section -->
+        <section id="popular-topics-cont" class="section-popular-topics">
+            <!-- Tab panes. -->
+            <div id="popular-topics-tab-content" class="popular-topics-tab-content">
+               <div class="tab-content"></div>
+            </div>
+        </section>
+
+        <!-- Access your account -->
+        <section id="section-instant-helps" class="section-instant-helps">        
+            <h2 class="heading-visitor">Access your account</h2> 
+            <div class="instant-helps-list"></div>        
+        </section>
+
+        <!-- Status cta for visitor -->
+        <section id="section-cta-status" class="section-cta-bar section-cta-status">
+            <div class="profile-container">                
+                <h3>Check the current status of<br />Upwork services</h3>
+                <a href="https://status.upwork.com" target="_blank" class="banner-button">Status Page</a>                          
+            </div>
+        </section>
+
+        <section id="section-recommended-topics" class="section-recommended-topics">
+            <h2 class="heading-visitor">Recommended topics for you</h2>
+            <div id="recommended-topics-cont" class=""></div>
+        </section>
+
+        {{#if signed_in}}
+
+        
+            <section id="section-cta-contact" class="section-cta-contact">
+                <div class="row">
+                    <div class="col-md-6">
+                        <section class="section-cta-bar cta-card-login">
+                            <div class="profile-container">                
+                                <span>Log in for personalized service and assistance.</span>
+                                <h3>Contact Us</h3>
+                                <a href="https://support.upwork.com/hc/en-us/signin?return_to=https://support.upwork.com/hc/en-us" class="banner-button">Log In</a>
+                                <img id="img-cta-contact" src="" alt=""/>                
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-md-6">
+                        <section class="section-cta-bar profile-community">
+                            <div class="profile-container"> 
+                                <span>The Upwork Community team is here to help.</span>               
+                                <h3>Ask Everyone</h3>
+                                <a href="https://community.upwork.com" class="banner-button">Ask</a>
+                                <img id="img-cta-ask" src="" alt=""/>                
+                            </div>
+                        </section> 
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-cta-contact-mobile" class="section-cta-contact-mobile section-cta-bar visible-xs-block visible-sm-block">
+                <div class="profile-container">
+                    <h3 class="heading-vistior">Log in to get personalized help.</h3>
+                    <a class="btn btn-default link-log-in" href="#">Log In</a>
+                    <a class="btn btn-link" href="https://www.upwork.com/ab/account-security/reset-password">Forgot my password</a>
+                </div>
+            </section>
+            {{ else }}
+        {{/if}}        
+    </div>
+</div>
+
+<script type="text/javascript">
+    /* Set page location to SUIT2. */
+    window.__SUIT_CONFIG__ = {
+        pageLocation: 'support:home:'
+    }
+</script>

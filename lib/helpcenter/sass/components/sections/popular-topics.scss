@@ -1,0 +1,280 @@
+//
+// Components - Sections - Popular Topics
+// --------------------------------------------------
+#navigation-cont{
+    margin-bottom: $nav-section-margin-bottom;
+}
+#popular-topics-cont {
+    margin-bottom: $popular-topics-cont-margin-bottom;
+}
+.section-popular-topics,
+.section-search-topics {
+    .search-topics-nav-tabs,
+    .popular-topics-nav-tabs {
+        .heading-visitor{
+            margin: $popular-topic-heading-visitor-margin;
+            margin-top: 0;
+            padding: $space-0;
+            color: $color-up-black-gray;
+        }
+        padding: $space-30 $space-0;
+        background-color: $white;        
+        .nav-tabs-container {
+            margin: $space-0;
+            .nav {
+                &.nav-tabs {
+                    display: inline-block;
+                    div {
+                        display: inline-block;
+                        margin: $nav-cont-margin;
+                        position: relative;
+                        a {                            
+                            font-size: $nav-link-font-size;
+                            line-height: $nav-link-line-height;
+                            display: inline-block;
+                            text-decoration: none;
+                            color: $nav-link-color-normal;
+                            background-color: $white;
+                            font-weight: $font-weight-500; 
+                            font-family: $nav-link-font-family;   
+                            font-style: normal;
+                            position: relative;                            
+                            padding: $popular-topic-nav-link-padding;                       
+                            &:hover,
+                            &:focus,
+                            &:active {
+                                color: $nav-link-color-active;                                
+                            }
+                            &::after{
+                                content: '';
+                                display: block;
+                                width: $popular-topic-nav-link-after-width;
+                                bottom: $popular-topic-nav-link-after-bottom;
+                                background-color: none;
+                                height: $popular-topic-nav-link-after-height;
+                                position: relative;
+                                border-radius: $popular-topic-nav-link-border-radius;
+                            }
+                        }
+                        &.active {
+                            a {
+                                color: $nav-link-color-active;                               
+                                &::after{
+                                    content: '';
+                                    display: block;
+                                    width: $popular-topic-nav-link-active;
+                                    bottom: $popular-topic-nav-link-active-bottom;
+                                    background-color: $nav-link-color-active;
+                                    height: $popular-topic-nav-link-active-height;
+                                    position: relative;
+                                    border-radius: $popular-topic-nav-link-border-radius;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &::after{
+                content: '';
+                display: block;
+                background: $nav-tabs-nav-after-background;
+                height: $nav-tabs-nav-after-height;
+                border-radius: $nav-tabs-nav-after-border-radius;
+            }
+        }
+        &.fixed-topics {
+            position: fixed;
+            z-index: $nav-tabs-fixed-z-index;
+            top: $nav-tabs-fixed-top;            
+            max-width: $nav-tabs-fixed-max-width;
+            padding: $nav-tabs-fixed-padding;
+            display: block;
+            width: $nav-tabs-fixed-width;
+            background-color: $white;
+            margin: auto;
+            @media (max-width: 991px) {
+                top: $nav-tabs-fixed-991-top;
+            }
+        }
+    }
+}
+
+.popular-topics-tab-content {    
+    .heading-visitor {
+        margin: $space-0 $space-0 $space-30;
+        padding: $space-0;
+        color: $color-up-black-gray;
+    }
+
+    .tab-content {
+        margin-left: $popular-topic-cont-margin-left;
+        margin-right: $popular-topic-cont-margin-right;
+        .tab-pane {
+            .popular-topics-category {
+                float: left;
+                width: $popular-topic-category-width;
+                margin: $space-0;
+                padding: $popular-topic-category-padding;
+                a {
+                    display: block;
+                    width: $popular-topic-item-width;                    
+                    padding: $popular-topic-cont-padding;
+                    border-radius: $border-radius-default;
+                    background-color: $popular-topics-cont-bg;
+                    .text-container {
+                        padding: $popular-topics-text-container-padding;
+                        margin: $space-0;
+                        h3{
+                            margin-top: 0;
+                            font-style: normal;
+                            font-weight: $font-weight-500;
+                            font-size: $popular-topic-item-heading-font-size;
+                            line-height: $popular-topic-item-heading-line-height;
+                            font-family: $popular-topic-item-heading-font;
+                            letter-spacing: $popular-topic-item-heading-letter-spacing;
+                            height: $popular-topic-item-heading-height;
+                            overflow: hidden;
+                        }
+                        p{
+                            font-weight: $font-weight-500;
+                            margin: $space-0;
+                            color: $popular-topic-item-p-color; 
+                            height: $popular-topic-item-p-height;
+                            overflow: hidden;                           
+                        }
+                    }
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        text-decoration: none;
+                        background-color: $color-cloud-gray;
+                    }
+                    .icon-container{                        
+                        height: $popular-topic-icon-size;
+                        position: absolute;
+                        span{
+                            background-size: $popular-topic-icon-size;
+                        }
+                    }
+                }
+            }
+            &.tab-pane-internal {
+                .popular-topics-category {
+                    a {
+                        height: $popular-topic-internal-cat-height;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 991px) {
+    .section-popular-topics,
+    .section-search-topics {
+        .popular-topics-nav-tabs {
+            .nav-tabs-container {
+                width: 100;
+                height: auto;
+                display: inline-block;
+            }
+        }
+    }
+
+    .popular-topics-tab-content {
+        .tab-content {
+            .tab-pane {
+                .popular-topics-category {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 667px) {
+    #popular-topics-cont {
+        margin-bottom: $space-0;
+    }
+    .section-popular-topics, .section-search-topics {
+        .popular-topics-nav-tabs {
+            .heading-visitor {
+                padding: $space-15;
+                text-align: center;
+                margin: 0;
+            }
+            .nav-tabs-container {
+                width: 100%;
+                height: auto;
+                .nav {
+                    &.nav-tabs {
+                        div {
+                            padding-bottom: $space-15;                            
+                            a {
+                                font-size: $font-size-14;
+                                padding: $button-padding-small;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .popular-topics-tab-content {
+        .tab-content {
+            margin-left: $space-0;
+            margin-right: $space-0;
+            .tab-pane {
+                .popular-topics-category {
+                    width: 100%;
+                    margin: $space-0;
+                    padding: $space-0 $space-0 $space-20 $space-0;
+                    a {
+                        height: auto;
+                        margin: $space-0;
+                        padding: $space-15 $space-20;
+                        text-align: left;
+                        position: relative;
+                        .icon-container {                            
+                            vertical-align: top;
+                            margin-bottom: 0;
+                            height: $space-30;
+                            [class^='icon-svg-'] {
+                                width: $space-30;
+                                height: $space-30;
+                                vertical-align: top;
+                            }
+                        }
+
+                        .text-container {
+                            padding: $space-0;
+                            display: inline-block;
+                            margin: $popular-topic-text-container-margin;
+                            vertical-align: top;
+                            h3 {
+                                margin: $space-0;
+                                line-height: ( $space-30 + $space-5 );
+                                height: $space-30;
+                            }
+
+                            p {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                &.tab-pane-internal {
+                    .popular-topics-category {
+                        a {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

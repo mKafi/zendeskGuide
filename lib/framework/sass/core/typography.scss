@@ -1,0 +1,175 @@
+//
+// Core - Typography
+// --------------------------------------------------
+
+
+body {
+    letter-spacing: $letter-spacing-base;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    word-break: break-word;
+
+    color: $color-carbonite-gray;
+}
+
+h1 {
+    font-size: $font-size-26;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-32;
+
+    letter-spacing: $letter-spacing-base;
+
+    @media (max-width: 767px) {
+        font-size: $font-size-24;
+        line-height: $line-height-30;
+    }
+
+    &.heading-visitor {
+        font-family: $font-family-rza;
+        font-size: ((($up-27 * 2) + $up-3) - $up-1)+px;
+        font-weight: $font-weight-500;
+        line-height: $line-height-43;
+
+        letter-spacing: -0.035em;
+
+        @media (max-width: 991px) {
+            font-size: $font-size-36;
+            line-height: $line-height-37;
+
+            letter-spacing: -0.032em;
+        }
+
+        @media (max-width: 767px) {
+            font-size: $font-size-32;
+            line-height: $line-height-33;
+
+            letter-spacing: -0.031em;
+        }
+    }
+}
+
+h2 {
+    font-size: $font-size-22;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-28;
+
+    letter-spacing: $letter-spacing-base;
+
+    &.heading-visitor {
+        font-family: $font-neue-montreal;
+        font-size: $normal-h1-font-size;
+        font-weight: $normal-h1-font-weight;
+        line-height: $normal-h1-line-height;
+        letter-spacing: $normal-h1-letter-spacing;
+        text-align: $text-align-left;
+        color: $normal-h1-color;
+
+        @media (max-width: 991px) {
+            font-size: $font-size-32;
+            line-height: $line-height-33;
+            letter-spacing: -0.031em;
+        }
+
+        @media (max-width: 767px) {
+            font-size: $font-size-28;
+            line-height: $line-height-30;
+            letter-spacing: -0.028em;
+            text-align: center;
+        }
+    }
+}
+
+h3 {
+    font-size: $font-size-18;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-24;
+
+    letter-spacing: $letter-spacing-base;
+
+    &.heading-visitor {
+        font-family: $font-family-rza;
+        font-size: $font-size-24;
+        font-weight: $font-weight-500;
+        line-height: $line-height-26;
+
+        letter-spacing: -0.028em;
+    }
+}
+
+h4,
+h5,
+h6 {
+    font-size: $font-size-16;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-22;
+
+    letter-spacing: $letter-spacing-base;
+}
+
+.sub-head {
+    font-size: $font-size-14;
+    font-weight: $font-weight-bold;
+}
+
+em {
+    font-weight: $font-weight-bold;
+}
+
+p {
+    font-size: $font-size-14;
+    line-height: $line-height-20;
+
+    letter-spacing: $letter-spacing-base;
+}
+
+b,
+strong {
+    font-weight: $font-weight-bold;
+}
+
+small {
+    font-size: $font-size-12;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-18;
+
+    letter-spacing: $letter-spacing-base;
+}
+
+.text-default {
+    color: $brand-default;
+}
+
+.text-primary {
+    color: $brand-primary;
+}
+
+.text-success {
+    color: $brand-success;
+}
+
+.text-info {
+    color: $brand-info;
+}
+
+.text-warning {
+    color: $brand-warning;
+}
+
+.text-danger {
+    color: $brand-danger;
+}
+
+.text-lime {
+    color: $color-up-lime;
+}
+
+.text-white {
+    color: $white;
+}

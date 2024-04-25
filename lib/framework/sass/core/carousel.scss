@@ -1,0 +1,52 @@
+//
+// Core - Carousel
+// --------------------------------------------------
+
+
+.carousel-control {
+    width: 18px;
+    height: $space-30;
+
+    opacity: 1;
+
+    &.left,
+    &.right {
+        background: transparent;
+        background-position: -14px;
+
+        span {
+            width: 48px;
+            height: $space-30;
+        }
+    }
+
+    &.left {
+        background-image: url($aws-base-path + '/arrows/icon-arrow-left.svg');
+        background-repeat: no-repeat;
+        background-size: auto 48px;
+
+        &:hover {
+            background-position: -62px;
+        }
+
+        &:focus,
+        &:active {
+            background-position: -14px;
+        }
+    }
+
+    &.right {
+        background-image: url($aws-base-path + '/arrows/icon-arrow-right.svg');
+        background-repeat: no-repeat;
+        background-size: auto 48px;
+
+        &:hover {
+            background-position: -62px;
+        }
+
+        &:focus,
+        &:active {
+            background-position: -14px;
+        }
+    }
+}

@@ -1,0 +1,115 @@
+//
+// Rich Text - CTA
+// --------------------------------------------------
+
+
+.article-body {
+    .note {
+        margin: $space-0 $space-0 $space-25;
+        padding-left: $space-20;
+
+        border-left: $space-5 solid $color-granite-gray;
+
+        &.note-default {
+            border-left-color: $color-granite-gray;
+        }
+
+        &.note-primary {
+            border-left-color: $brand-primary;
+        }
+
+        &.note-success {
+            border-left-color: $brand-success;
+        }
+
+        &.note-info {
+            border-left-color: $brand-info;
+        }
+
+        &.note-warning {
+            border-left-color: $brand-warning;
+        }
+
+        &.note-danger {
+            border-left-color: $brand-danger;
+        }
+    }
+
+    .callout {
+        margin: $space-0 $space-0 $space-25;
+        padding: $space-25;
+
+        border-left: $space-5 solid $color-granite-gray;
+        background-color: $color-background-gray;
+
+        h4 {
+            margin: $space-0 $space-0 $space-15;
+        }
+
+        p {
+            margin: $space-0;
+        }
+
+        &.callout-dashed {
+            border-width: $space-1;
+            border-style: dashed;
+        }
+
+        &.callout-transparent {
+            border-width: $space-1;
+            border-style: solid;
+            border-color: $color-oyster-gray;
+            background-color: transparent;
+        }
+
+        &.callout-primary {
+            color: $white;
+            border-left-color: darken($brand-primary, 10%);
+            background-color: $brand-primary;
+
+            h4 {
+                color: $white;
+            }
+        }
+
+        &.callout-success {
+            color: $white;
+            border-left-color: darken($brand-success, 10%);
+            background-color: $brand-success;
+
+            h4 {
+                color: $white;
+            }
+        }
+
+        &.callout-info {
+            color: $white;
+            border-left-color: darken($brand-info, 10%);
+            background-color: $brand-info;
+
+            h4 {
+                color: $white;
+            }
+        }
+
+        &.callout-warning {
+            color: $white;
+            border-left-color: darken($brand-warning, 10%);
+            background-color: $brand-warning;
+
+            h4 {
+                color: $white;
+            }
+        }
+
+        &.callout-danger {
+            color: $white;
+            border-left-color: darken($brand-danger, 10%);
+            background-color: $brand-danger;
+
+            h4 {
+                color: $white;
+            }
+        }
+    }
+}

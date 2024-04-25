@@ -1,0 +1,41 @@
+//
+// Rich Text - Typography
+// --------------------------------------------------
+
+
+.article-body {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-weight: $font-weight-bold;
+
+        margin: $space-25 $space-0 $space-10;
+
+        color: $color-carbonite-gray;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+        &.sub-heading {
+            margin-top: $space-0;
+        }
+    }
+
+    p {
+        line-height: $line-height-24;
+
+        margin: $space-0 $space-0 $space-10;
+    }
+
+    hr {
+        border-top: $border-flannel-gray-small;
+    }
+}
+
+.wysiwyg-font-size-small {
+    font-size: $font-size-12;
+}

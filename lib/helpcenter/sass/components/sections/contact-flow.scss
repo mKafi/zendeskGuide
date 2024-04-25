@@ -1,0 +1,25 @@
+//
+// Components - Sections - Contact Flow
+// --------------------------------------------------
+
+.section-contact-flow {
+    background-color: $color-background-gray;
+	padding: $space-30 $space-0;
+
+    h2 {
+        &.heading-vistior {
+            font-family: $font-family-rza;
+
+            margin: $space-0;
+
+            color: $color-up-black-gray;
+        }
+    }
+}
+
+
+.contact-flow-call-us-widget {
+    h2 {
+        margin-bottom: $space-20;
+    }
+}

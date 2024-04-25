@@ -1,0 +1,51 @@
+//
+// Core - Ajax Loader
+// --------------------------------------------------
+
+
+.ajax-loader-overlay {
+    position: fixed;
+    z-index: 1500;
+    top: $space-0;
+    left: $space-0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba($color-cloud-gray, 0.9);
+
+    &.ajax-loader-default {
+        display: none;
+    }
+}
+
+.ajax-loader {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    animation: spinner 2s linear 0s infinite;
+    animation: spinner 2s linear 0s infinite;
+
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NSA0NSI+PHN0eWxlPkBrZXlmcmFtZXMgZGFzaC1jb2xvcnswJXtzdHJva2U6IzAwODMyOTtzdHJva2UtZGFzaGFycmF5OjEsMjAwO3N0cm9rZS1kYXNob2Zmc2V0OjB9NDAle3N0cm9rZTojYTRkZDgzO3N0cm9rZS1kYXNoYXJyYXk6ODksMjAwO3N0cm9rZS1kYXNob2Zmc2V0Oi0zNXB4fTYwJSx0b3tzdHJva2U6IzM3YTAwMDtzdHJva2UtZGFzaGFycmF5Ojg5LDIwMDtzdHJva2UtZGFzaG9mZnNldDotMTI0cHh9fTwvc3R5bGU+PGNpcmNsZSBjeD0iMjIiIGN5PSIyMiIgcj0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHlsZT0iYW5pbWF0aW9uOmRhc2gtY29sb3IgMS41cyBlYXNlLWluLW91dCBpbmZpbml0ZSIgc3Ryb2tlLWRhc2hhcnJheT0iMSwyMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $space-40 auto;
+}
+
+.forbid-overlay {
+    position: absolute;
+    top: $space-0;
+    left: $space-0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.2;
+    background-color: $white;
+}
